@@ -1,0 +1,43 @@
+﻿body {
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+
+}
+
+    li a {
+        display: block;
+        padding: 8px;
+        background-color: #dddddd;
+    }
+
+#Logo{
+    display: inline-block;
+    width: 150px;
+
+}
+
+#Nav {
+    display: inline-block;
+    width: 75%;
+}
+
+#LocationImage{
+    display: inline-block;
+    width: 35px;
+
+}
+
+#LocationImage img{
+    width: 100%;
+}
