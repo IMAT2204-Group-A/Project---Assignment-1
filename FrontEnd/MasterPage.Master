@@ -9,18 +9,7 @@
     </asp:ContentPlaceHolder>
     <link href="StyleSheet.css" rel="stylesheet" />
 
-    <style type="text/css">
-        .auto-style1 {
-            position: absolute;
-            top: 260px;
-            left: 64px;
-            z-index: 1;
-            height: 42px;
-            width: 79px;
-        }
-    </style>
-
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <header>
@@ -39,9 +28,13 @@
             <div id="LocationImage">
                 <img src="Images/Location%20Image.png" />
             </div>
-
-
         </header>
+
+        <div id="MainContent" >
+
+        </div>
+
+        
         <hr style="border: 10px solid blue" />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -49,9 +42,10 @@
         </div>
 
 
-        <asp:Button ID="Button1" runat="server" CssClass="auto-style1" OnClick="Button1_Click" Text="Button" />
-
-
     </form>
-</body>
+            <ul>
+                <li><a href="ProductPage.aspx">Products Page</a></li>
+            </ul>
+
+        </body>
 </html>

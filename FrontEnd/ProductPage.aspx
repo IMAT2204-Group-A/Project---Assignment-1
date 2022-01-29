@@ -19,6 +19,9 @@
                     <li style ="float: right"><a href="Find Store">Find Store</a></li>
                 </ul>
             </div>
+            <div id="LocationImage">
+                <img src="Images/Location%20Image.png" />
+            </div>
         </header>
     </form>
 </body>
