@@ -6,11 +6,19 @@
 <head runat="server">
     <link href="StyleSheet.css" rel="stylesheet" />
     <title> Product Page: DVD Shop</title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 80%;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <header>
-            <div id="Nav">
+            <div id="Logo">
+                <img src="https://via.placeholder.com/150" />0
+            </div>
+            <div id="Nav" class="auto-style1">
                 <ul>
                     <li><a href="MasterPage.Master">Home Page</a></li>
                     <li><a href ="#news">News</a></li>
