@@ -70,7 +70,7 @@
     <Content Include="Images\Location Image.png" />
     <Content Include="Index.aspx" />
     <Content Include="ProductPage.aspx" />
-    <Content Include="StyleSheet.css" />
+    <Content Include="SyleSheets\StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
