@@ -6,6 +6,9 @@
 <head runat="server">
     <title>Product Page: DVD Shop</title>
     <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
+    <style type="text/css">
+
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

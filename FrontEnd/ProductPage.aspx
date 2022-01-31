@@ -4,21 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="StyleSheet.css" rel="stylesheet" />
     <title>Product Page: DVD Shop</title>
+    <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
-            width: 80%;
-        }
 
-        .auto-style4 {
-            float: left;
-            height: 63px;
-        }
-
-        .auto-style5 {
-            height: 63px;
-        }
     </style>
 </head>
 <body>
@@ -27,7 +16,7 @@
             <div id="Logo">
                 <img src="https://via.placeholder.com/150" />
             </div>
-            <div id="Nav" class="auto-style1">
+            <div id="Nav" >
                 <ul>
                     <li><a href="MasterPage.Master">Home Page</a></li>
                     <li><a href="#news">News</a></li>
@@ -45,6 +34,8 @@
                 <img src="Images/Location%20Image.png" />
             </div>
         </header>
+
+
         <div id="MainContent">
             <table style="width: 100%;">
                 <tr>
