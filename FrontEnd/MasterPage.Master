@@ -5,8 +5,6 @@
 <html>
 <head runat="server">
     <title>Product Page: DVD Shop</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
     <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
     <style type="text/css">
 
