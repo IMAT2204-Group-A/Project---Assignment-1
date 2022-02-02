@@ -6,15 +6,7 @@
 <head runat="server">
     <title>Product Page: DVD Shop</title>
     <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
-    <style type="text/css">
-
-        .auto-style1 {
-            width: 67px;
-            height: 47px;
-        }
-
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <header>
@@ -83,13 +75,13 @@
                     <th>Careers</th>
                     
                 </tr>
-                <tr>
+                <tr style="align-content:center;">
                     <td>
-                        <input /> <button> Submit</button>
+                        <input  /> <button> Submit</button>
                     </td>
-                    <td><button>Help Centre</button></td>
+                    <td><button >Help Centre</button></td>
                     <td><button>Carrer.com</button> </td>
-                    <td><img src="Images/Location Image.png"/></td>
+                    <td></td>
                 </tr>
             </table>
         </div>
