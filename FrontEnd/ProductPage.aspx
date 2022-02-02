@@ -8,6 +8,11 @@
     <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
     <style type="text/css">
 
+        .auto-style1 {
+            width: 67px;
+            height: 47px;
+        }
+
     </style>
 </head>
 <body>
@@ -76,7 +81,7 @@
                     <th>Sign Up For Emails</th>
                     <th>Useful Information</th>
                     <th>Careers</th>
-                    <th> </th>
+                    
                 </tr>
                 <tr>
                     <td>
@@ -84,7 +89,7 @@
                     </td>
                     <td><button>Help Centre</button></td>
                     <td><button>Carrer.com</button> </td>
-                    <td> </td>
+                    <td><img src="Images/Location Image.png"/></td>
                 </tr>
             </table>
         </div>
