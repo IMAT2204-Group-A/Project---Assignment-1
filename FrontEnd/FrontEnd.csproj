@@ -67,7 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BasketPage.aspx" />
     <Content Include="Images\Location Image.png" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Shopping Cart.png" />
     <Content Include="Index.aspx" />
     <Content Include="IndividualProductsPage.aspx" />
     <Content Include="ProductPage.aspx" />
@@ -75,6 +78,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasketPage.aspx.cs">
+      <DependentUpon>BasketPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasketPage.aspx.designer.cs">
+      <DependentUpon>BasketPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
