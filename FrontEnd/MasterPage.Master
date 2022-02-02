@@ -9,7 +9,6 @@
     </asp:ContentPlaceHolder>
     <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
     <style type="text/css">
-
     </style>
 </head>
 <body>
@@ -28,19 +27,18 @@
                     <li><a href="#Login">Login</a></li>
                     <li><a href="#SignIn">Sign Up</a></li>
                 </ul>
-                
+
             </div>
             <div id="LocationImage">
                 <img src="Images/Location%20Image.png" />
             </div>
         </header>
 
-        <div id="MainContent" >
-
+        <div id="MainContent">
         </div>
 
-        
-        <hr style="border: 10px solid blue" />
+
+        <hr style="border: 10px solid #00FFA0 " />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -48,9 +46,42 @@
 
 
     </form>
-            <ul>
-                <li style="float: left" ><a href="ProductPage.aspx">Products Page</a></li>
-            </ul>
+    <ul>
+        <li style="float: left"><a href="ProductPage.aspx">Products Page</a></li>
+    </ul>
+    <br />
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-heading">
+                    <h2>About us</h2>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Blag</a></li>
+                    <li><a href="#">hhfhff</a></li>
+                    <li><a href="#">blog</a></li>
+                </div>
+                <div class="footer-heading">
+                    <h2>Contact us</h2>
+                    <li><a href="#">jobs</a></li>
+                    <li><a href="#">Blag</a></li>
+                    <li><a href="#">hhfhff</a></li>
+                    <li><a href="#">blog</a></li>
+                </div>
+                <div class="footer-heading">
+                    <h2>Social Media</h2>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Blag</a></li>
+                    <li><a href="#">hhfhff</a></li>
+                    <li><a href="#">blog</a></li>
+                </div>
+                <div class="footer-heading">
+                    <h2>Join Our Newsletter</h2>
+                    <input type="email" placeholder="Enter Email" id="footer-email" "/>
+                    <input type="submit" value="Sign up" id="footer-email-btn" />
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        </body>
+</body>
 </html>
