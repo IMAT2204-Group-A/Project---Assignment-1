@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title>Product Page: DVD Shop</title>
-        <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
     <style type="text/css">
@@ -25,11 +25,10 @@
                     <li><a href="#contact">Contactss</a></li>
                     <li><a href="#about">About</a></li>
                     <li style="float: right"><a href="#FindStore">Find Store</a></li>
+                    <li><a href="#Login">Login</a></li>
+                    <li><a href="#SignIn">Sign Up</a></li>
                 </ul>
-                <ul style="float:right">
-                   <li><a href="#Login">Login</a></li>
-                    <li><a href="#SignIn">Sign In</a></li>
-                </ul>
+                
             </div>
             <div id="LocationImage">
                 <img src="Images/Location%20Image.png" />
