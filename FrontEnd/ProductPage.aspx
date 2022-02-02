@@ -17,7 +17,7 @@
                 <img src="https://via.placeholder.com/150" />
             </div>
             <div id="Nav" >
-                <ul>
+                <ul style="width: max-content">
                     <li><a href="MasterPage.Master">Home Page</a></li>
                     <li><a href="#news">News</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -58,7 +58,7 @@
                     <td>Price</td>
                     <td>Price</td>
                 </tr>
-                <tr>
+                <tr style="align-content:center">
                     <td>
                         <button>View Product</button></td>
                     <td>
@@ -67,6 +67,25 @@
                         <button>View Product</button></td>
                 </tr>
 
+            </table>
+        </div>
+
+        <div id="footer">
+            <table style="width: 100%">
+                <tr>
+                    <th>Sign Up For Emails</th>
+                    <th>Useful Information</th>
+                    <th>Careers</th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input /> <button> Submit</button>
+                    </td>
+                    <td><button>Help Centre</button></td>
+                    <td><button>Carrer.com</button> </td>
+                    <td> </td>
+                </tr>
             </table>
         </div>
     </form>
