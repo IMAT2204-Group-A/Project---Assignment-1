@@ -74,6 +74,7 @@
     <Content Include="Index.aspx" />
     <Content Include="IndividualProductsPage.aspx" />
     <Content Include="ProductPage.aspx" />
+    <Content Include="ProductPageForm.aspx" />
     <Content Include="SyleSheets\StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="ProductPage.aspx.designer.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPageForm.aspx.cs">
+      <DependentUpon>ProductPageForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPageForm.aspx.designer.cs">
+      <DependentUpon>ProductPageForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
