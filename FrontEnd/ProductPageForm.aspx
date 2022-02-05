@@ -7,13 +7,38 @@
     <h1 style="text-align:center;">Products Page</h1>
     <table style="width:100%">
         <tr>
-            <th>Product 1</th>
-            <th>Product 2</th>
-            <th>product 3</th>
+            <th>DVD Title 1</th>
+            <th>DVD Title 2</th>
+            <th>DVD Title 3</th>
         </tr>
         <tr>
+            <td>
+                <img style="width:125px; height:125px;" src="" alt="Photo Product" />
+            </td>
+            <td>
+                <img style="width:125px; height:125px;" src="" alt="Photo Product" />
 
+            </td>
+            <td>
+                <img style="width:125px; height:125px;" src="" alt="Photo Product" /> 
+            </td>
+            
         </tr>
+        <tr>
+            <td>Title</td>
+            <td>Title</td>
+            <td>Title</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>Price</td>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="IndividualProductsPage.aspx">View Product</button></td>
+            <td><button type="button "></button></td>
+        </tr>
+
     </table>
 
 </asp:Content>
