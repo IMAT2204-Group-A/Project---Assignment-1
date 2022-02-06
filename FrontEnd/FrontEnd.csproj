@@ -73,7 +73,6 @@
     <Content Include="Images\Shopping Cart.png" />
     <Content Include="Index.aspx" />
     <Content Include="IndividualProductsPage.aspx" />
-    <Content Include="ProductPage.aspx" />
     <Content Include="ProductPageForm.aspx" />
     <Content Include="SyleSheets\StyleSheet.css" />
     <Content Include="Web.config" />
@@ -106,13 +105,6 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ProductPage.aspx.cs">
-      <DependentUpon>ProductPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProductPage.aspx.designer.cs">
-      <DependentUpon>ProductPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPageForm.aspx.cs">
       <DependentUpon>ProductPageForm.aspx</DependentUpon>

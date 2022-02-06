@@ -1,39 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndividualProductsPage.aspx.cs" Inherits="FrontEnd.IndividualProductsPage" %>
+﻿<%@ Page Title="Products Page "  Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="~/IndividualProductsPage.aspx.cs" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Product Page: DVD Shop</title>
-    <link href="SyleSheets/StyleSheet.css" rel="stylesheet" />
-    <style type="text/css">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-       <header>
-            <div id="Logo">
-                <img src="https://via.placeholder.com/150" />
-            </div>
-            <div id="Nav" class="auto-style1">
-                <ul>
-                    <li><a href="MasterPage.Master">Home Page</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li style="float: right"><a href="Find Store">Find Store</a></li>
+    <h1 style="text-align:center;">Product Details</h1>
 
-                </ul>
-                <ul style="float: right">
-                    <li><a href="#Login">Login</a></li>
-                    <li><a href="#SignIn">Sign In</a></li>
-                </ul>
-            </div>
-            <div id="LocationImage">
-                <img src="Images/Location%20Image.png" />
-            </div>
-        </header>
-    </form>
-</body>
-</html>
+    
+</asp:Content>
