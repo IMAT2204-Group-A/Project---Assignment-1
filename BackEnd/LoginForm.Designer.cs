@@ -73,6 +73,7 @@ namespace BackEnd
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(198, 37);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
@@ -103,7 +104,7 @@ namespace BackEnd
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +116,7 @@ namespace BackEnd
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Login Page";
             this.ResumeLayout(false);
             this.PerformLayout();

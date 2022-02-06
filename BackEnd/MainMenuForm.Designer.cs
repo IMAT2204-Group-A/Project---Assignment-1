@@ -31,6 +31,7 @@ namespace BackEnd
         {
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnViewStock = new System.Windows.Forms.Button();
+            this.btnViewUsers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -44,18 +45,28 @@ namespace BackEnd
             // 
             // btnViewStock
             // 
-            this.btnViewStock.Location = new System.Drawing.Point(12, 12);
+            this.btnViewStock.Location = new System.Drawing.Point(135, 133);
             this.btnViewStock.Name = "btnViewStock";
             this.btnViewStock.Size = new System.Drawing.Size(118, 73);
             this.btnViewStock.TabIndex = 1;
             this.btnViewStock.Text = "View Stock";
             this.btnViewStock.UseVisualStyleBackColor = true;
             // 
+            // btnViewUsers
+            // 
+            this.btnViewUsers.Location = new System.Drawing.Point(311, 133);
+            this.btnViewUsers.Name = "btnViewUsers";
+            this.btnViewUsers.Size = new System.Drawing.Size(118, 73);
+            this.btnViewUsers.TabIndex = 2;
+            this.btnViewUsers.Text = "View Users";
+            this.btnViewUsers.UseVisualStyleBackColor = true;
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 536);
+            this.Controls.Add(this.btnViewUsers);
             this.Controls.Add(this.btnViewStock);
             this.Controls.Add(this.btnLogout);
             this.Name = "MainMenuForm";
@@ -68,5 +79,6 @@ namespace BackEnd
 
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnViewStock;
+        private System.Windows.Forms.Button btnViewUsers;
     }
 }
