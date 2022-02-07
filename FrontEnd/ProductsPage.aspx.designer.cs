@@ -10,7 +10,7 @@
 
 namespace FrontEnd
 {
-    public partial class IndividualProductsPage
+    public partial class ProductsPage
     {
     }
 }

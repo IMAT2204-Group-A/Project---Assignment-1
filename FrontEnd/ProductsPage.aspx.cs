@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FrontEnd
 {
-    public partial class ProductPage : System.Web.UI.Page
+    public partial class ProductsPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
