@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DVDBook.mdf" />
+    <Content Include="App_Data\DVDBook_log.ldf" />
     <Content Include="BasketPage.aspx" />
     <Content Include="Images\Location Image.png" />
     <Content Include="Images\Logo.png" />
@@ -78,6 +80,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\DataConnection.cs" />
     <Compile Include="BasketPage.aspx.cs">
       <DependentUpon>BasketPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
