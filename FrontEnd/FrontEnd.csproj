@@ -78,7 +78,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\DataConnection.cs" />
     <Compile Include="BasketPage.aspx.cs">
       <DependentUpon>BasketPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
