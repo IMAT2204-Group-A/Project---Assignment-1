@@ -4,7 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3>Basket Page</h3>
     <input class="SearchBar" type="text" placeholder="Search.."/>
-    <img class="ShoppingCart" src="Images/Shopping%20Cart.png" />
     <br /><br />
 
 </asp:Content>

@@ -62,6 +62,25 @@ namespace ClassLibraryCJMKLtd
             set { mCity = value; }
         }
 
+        private string mStatus;
+
+        public string Status
+        {
+            get { return mStatus; }
+
+            set { mStatus = value; }
+        }
+
+        private Int32 mCardNo;
+
+        public Int32 CardNo
+        {
+            get { return mCardNo; }
+
+            set { mCardNo = value; }
+        }
+
+
     }
 
 }

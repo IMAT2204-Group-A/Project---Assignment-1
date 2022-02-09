@@ -68,12 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BasketPage.aspx" />
+    <Content Include="CancelOrderPage.aspx" />
+    <Content Include="CheckoutPage.aspx" />
+    <Content Include="ConfirmOrderPage.aspx" />
     <Content Include="Images\Location Image.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\Shopping Cart.png" />
     <Content Include="Index.aspx" />
+    <Content Include="ProductDetailsPage.aspx" />
     <Content Include="ProductsPage.aspx" />
     <Content Include="SyleSheets\StyleSheet.css" />
+    <Content Include="ViewOrderPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +88,27 @@
     </Compile>
     <Compile Include="BasketPage.aspx.designer.cs">
       <DependentUpon>BasketPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CancelOrderPage.aspx.cs">
+      <DependentUpon>CancelOrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CancelOrderPage.aspx.designer.cs">
+      <DependentUpon>CancelOrderPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutPage.aspx.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutPage.aspx.designer.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmOrderPage.aspx.cs">
+      <DependentUpon>ConfirmOrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmOrderPage.aspx.designer.cs">
+      <DependentUpon>ConfirmOrderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -98,6 +124,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="ProductDetailsPage.aspx.cs">
+      <DependentUpon>ProductDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetailsPage.aspx.designer.cs">
+      <DependentUpon>ProductDetailsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductsPage.aspx.cs">
       <DependentUpon>ProductsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +139,13 @@
       <DependentUpon>ProductsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewOrderPage.aspx.cs">
+      <DependentUpon>ViewOrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewOrderPage.aspx.designer.cs">
+      <DependentUpon>ViewOrderPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
