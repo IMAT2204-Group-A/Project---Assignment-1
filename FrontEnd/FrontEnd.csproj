@@ -73,7 +73,9 @@
     <Content Include="Images\Shopping Cart.png" />
     <Content Include="Index.aspx" />
     <Content Include="IndividualProductsPage.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="ProductPage.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="SyleSheets\StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -99,6 +101,13 @@
     <Compile Include="IndividualProductsPage.aspx.designer.cs">
       <DependentUpon>IndividualProductsPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,6 +123,13 @@
       <DependentUpon>ProductPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
