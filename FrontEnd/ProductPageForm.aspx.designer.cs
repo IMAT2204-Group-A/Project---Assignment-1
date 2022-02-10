@@ -9,5 +9,15 @@
 
 
 
-public partial class  {
+using System;
+
+namespace FrontEnd
+{
+    public partial class IndividualProductsPage : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

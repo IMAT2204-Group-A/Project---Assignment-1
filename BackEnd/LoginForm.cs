@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BackEnd
 {
@@ -16,6 +17,7 @@ namespace BackEnd
         {
             InitializeComponent();
         }
+        string cs = @""; //Connect the data source connections string.
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -25,6 +27,19 @@ namespace BackEnd
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "" || txtPassword.Text == "")
+            {
+                lblLoginInfo.Text =   "Please enter Login Details.";
+                return;
+            }
+            try
+            {
+                SQLConnection con = new SQLConnection(cs);
+            }
         }
     }
 }

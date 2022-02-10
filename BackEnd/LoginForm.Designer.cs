@@ -36,6 +36,7 @@ namespace BackEnd
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblLoginInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -46,6 +47,7 @@ namespace BackEnd
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCancel
             // 
@@ -68,7 +70,7 @@ namespace BackEnd
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(300, 165);
+            this.txtUsername.Location = new System.Drawing.Point(300, 162);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(198, 37);
@@ -77,7 +79,7 @@ namespace BackEnd
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(300, 241);
+            this.txtPassword.Location = new System.Drawing.Point(300, 236);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(198, 41);
@@ -104,11 +106,21 @@ namespace BackEnd
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
             // 
+            // lblLoginInfo
+            // 
+            this.lblLoginInfo.AutoSize = true;
+            this.lblLoginInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginInfo.Location = new System.Drawing.Point(220, 396);
+            this.lblLoginInfo.Name = "lblLoginInfo";
+            this.lblLoginInfo.Size = new System.Drawing.Size(0, 25);
+            this.lblLoginInfo.TabIndex = 7;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 450);
+            this.Controls.Add(this.lblLoginInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -132,6 +144,7 @@ namespace BackEnd
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLoginInfo;
     }
 }
 
