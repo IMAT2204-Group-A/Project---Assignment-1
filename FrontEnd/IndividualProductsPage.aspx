@@ -6,5 +6,7 @@
 
     <h1 style="text-align:center;">Product Details</h1>
 
+    <img ID="PhotoProduct" src=""/>
+
     
 </asp:Content>

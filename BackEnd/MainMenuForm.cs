@@ -16,5 +16,12 @@ namespace BackEnd
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm lgfm = new LoginForm();
+            lgfm.Show();
+        }
     }
 }

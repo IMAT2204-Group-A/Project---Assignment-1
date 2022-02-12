@@ -7,14 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
 
-namespace FrontEnd
-{
-    public partial class IndividualProductsPage
-        {
 
-    }
+public partial class  {
 }
-
-
