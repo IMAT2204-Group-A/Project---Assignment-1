@@ -46,21 +46,23 @@ namespace BackEnd
             // 
             // btnViewStock
             // 
-            this.btnViewStock.Location = new System.Drawing.Point(135, 133);
+            this.btnViewStock.Location = new System.Drawing.Point(60, 67);
             this.btnViewStock.Name = "btnViewStock";
             this.btnViewStock.Size = new System.Drawing.Size(118, 73);
             this.btnViewStock.TabIndex = 1;
             this.btnViewStock.Text = "View Stock";
             this.btnViewStock.UseVisualStyleBackColor = true;
+            this.btnViewStock.Click += new System.EventHandler(this.btnViewStock_Click);
             // 
             // btnViewUsers
             // 
-            this.btnViewUsers.Location = new System.Drawing.Point(311, 133);
+            this.btnViewUsers.Location = new System.Drawing.Point(60, 146);
             this.btnViewUsers.Name = "btnViewUsers";
             this.btnViewUsers.Size = new System.Drawing.Size(118, 73);
             this.btnViewUsers.TabIndex = 2;
             this.btnViewUsers.Text = "View Users";
             this.btnViewUsers.UseVisualStyleBackColor = true;
+            this.btnViewUsers.Click += new System.EventHandler(this.btnViewUsers_Click);
             // 
             // MainMenuForm
             // 

@@ -23,5 +23,17 @@ namespace BackEnd
             LoginForm lgfm = new LoginForm();
             lgfm.Show();
         }
+
+        private void btnViewStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewUsers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            userList listform = new userList();
+            listform.Show();
+        }
     }
 }

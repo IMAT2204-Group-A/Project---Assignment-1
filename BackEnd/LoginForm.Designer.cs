@@ -111,7 +111,7 @@ namespace BackEnd
             // 
             this.lblLoginInfo.AutoSize = true;
             this.lblLoginInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginInfo.Location = new System.Drawing.Point(220, 396);
+            this.lblLoginInfo.Location = new System.Drawing.Point(81, 390);
             this.lblLoginInfo.Name = "lblLoginInfo";
             this.lblLoginInfo.Size = new System.Drawing.Size(0, 25);
             this.lblLoginInfo.TabIndex = 7;
@@ -131,6 +131,7 @@ namespace BackEnd
             this.Controls.Add(this.btnLogin);
             this.Name = "LoginForm";
             this.Text = "Login Page";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
