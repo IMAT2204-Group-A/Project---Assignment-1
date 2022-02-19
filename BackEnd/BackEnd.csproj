@@ -61,10 +61,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DVDBookDataSet.cs">
+      <DependentUpon>DVDBookDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DVDBookDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DVDBookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dvdEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dvdEntryForm.Designer.cs">
+      <DependentUpon>dvdEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dvdStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dvdStockForm.Designer.cs">
+      <DependentUpon>dvdStockForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -92,6 +107,12 @@
     <Compile Include="userList.Designer.cs">
       <DependentUpon>userList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="dvdEntryForm.resx">
+      <DependentUpon>dvdEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dvdStockForm.resx">
+      <DependentUpon>dvdStockForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -19,6 +19,8 @@ namespace BackEnd
 
         private void userEntryForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dVDBookDataSet.tblLogin' table. You can move, or remove it, as needed.
+            this.tblLoginTableAdapter.Fill(this.dVDBookDataSet.tblLogin);
             // TODO: This line of code loads data into the 'dVDBookDataSet.tblUser' table. You can move, or remove it, as needed.
             this.tblUserTableAdapter.Fill(this.dVDBookDataSet.tblUser);
             this.Refresh();

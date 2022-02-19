@@ -26,7 +26,9 @@ namespace BackEnd
 
         private void btnViewStock_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            dvdStockForm dvdlist = new dvdStockForm();
+            dvdlist.Show();
         }
 
         private void btnViewUsers_Click(object sender, EventArgs e)

@@ -56,7 +56,7 @@ namespace BackEnd
             // 
             // btnViewUsers
             // 
-            this.btnViewUsers.Location = new System.Drawing.Point(60, 146);
+            this.btnViewUsers.Location = new System.Drawing.Point(60, 345);
             this.btnViewUsers.Name = "btnViewUsers";
             this.btnViewUsers.Size = new System.Drawing.Size(118, 73);
             this.btnViewUsers.TabIndex = 2;
