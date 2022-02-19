@@ -21,24 +21,29 @@ namespace BackEnd
         {
             // TODO: This line of code loads data into the 'dVDBookDataSet.tblUser' table. You can move, or remove it, as needed.
             this.tblUserTableAdapter.Fill(this.dVDBookDataSet.tblUser);
+            this.Refresh();
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.tblUserBindingSource.EndEdit();
-            this.tblUserTableAdapter.Update(this.dVDBookDataSet);
+            this.tableAdapterManager.UpdateAll(this.dVDBookDataSet);
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            userList flist = new userList();
-            flist.Show();
         }
         public void AddNewUser()
         {
             tblUserBindingSource.AddNew();
         }
+        public void FindUser(int UserID)
+        {
+            tblUserBindingSource.Filter = "UserID = " + Convert.ToString(UserID);
+        }
+        
     }
 }

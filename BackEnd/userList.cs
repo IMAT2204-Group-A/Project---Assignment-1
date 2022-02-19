@@ -21,11 +21,15 @@ namespace BackEnd
         {
             // TODO: This line of code loads data into the 'dVDBookDataSet.tblUser' table. You can move, or remove it, as needed.
             this.tblUserTableAdapter.Fill(this.dVDBookDataSet.tblUser);
+            btnRemoveUser.Enabled = false;
+            btnEdit.Enabled = false;
 
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnEdit.Enabled = true;
+            btnRemoveUser.Enabled = true;
 
         }
 
@@ -42,6 +46,23 @@ namespace BackEnd
             Entryform.MdiParent = this.MdiParent;
             Entryform.Show();
             Entryform.AddNewUser();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            userEntryForm Users = new userEntryForm();
+            int UserID;
+            if (lstUser.SelectedIndex != -1)
+            {
+                UserID = Convert.ToInt32(value: lstUser.SelectedIndex);
+                Users.MdiParent = this.MdiParent;
+                Users.Show();
+                Users.FindUser(UserID);
+            }
+            else
+            {
+                lblErrorMessage.Text = "Please Select an User from the list above.";
+            }
         }
     }
 }

@@ -71,19 +71,19 @@ namespace BackEnd
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(300, 162);
-            this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(198, 37);
+            this.txtUsername.Size = new System.Drawing.Size(198, 29);
             this.txtUsername.TabIndex = 3;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(300, 236);
-            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(198, 41);
+            this.txtPassword.Size = new System.Drawing.Size(198, 29);
             this.txtPassword.TabIndex = 4;
             // 
             // label2
@@ -111,7 +111,7 @@ namespace BackEnd
             // 
             this.lblLoginInfo.AutoSize = true;
             this.lblLoginInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginInfo.Location = new System.Drawing.Point(81, 390);
+            this.lblLoginInfo.Location = new System.Drawing.Point(173, 397);
             this.lblLoginInfo.Name = "lblLoginInfo";
             this.lblLoginInfo.Size = new System.Drawing.Size(0, 25);
             this.lblLoginInfo.TabIndex = 7;
