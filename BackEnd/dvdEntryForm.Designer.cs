@@ -273,7 +273,6 @@ namespace BackEnd
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -393,9 +392,9 @@ namespace BackEnd
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.tblDVDGenreDataGridView.DataSource = this.tblDVDGenreBindingSource;
-            this.tblDVDGenreDataGridView.Location = new System.Drawing.Point(388, 99);
+            this.tblDVDGenreDataGridView.Location = new System.Drawing.Point(521, 74);
             this.tblDVDGenreDataGridView.Name = "tblDVDGenreDataGridView";
-            this.tblDVDGenreDataGridView.Size = new System.Drawing.Size(242, 220);
+            this.tblDVDGenreDataGridView.Size = new System.Drawing.Size(298, 216);
             this.tblDVDGenreDataGridView.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn1

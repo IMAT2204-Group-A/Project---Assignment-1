@@ -27,8 +27,9 @@ namespace BackEnd
         {
 
         }
-        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\DMU Course\Year 2\Project management - Jai\Project\Project - Assignment 1\App_Data\DVDBook.mdf; Integrated Security=True;";
-
+        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=H:\DMU Course\Year 2\Project management - Jai\Project\Project - Assignment 1\App_Data\DVDBook.mdf; Integrated Security=True;";
+        //D:\DMU Course\Year 2\Project management - Jai\Project\Project - Assignment 1\App_Data\DVDBook.mdf;
+        //H:\DMU Course\Year 2\Project management - Jai\Project\Project - Assignment 1\App_Data\DVDBook.mdf;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "" || txtPassword.Text == "")
