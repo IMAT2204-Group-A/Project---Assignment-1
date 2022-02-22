@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibraryCJMKLtd;
 
 namespace BackEnd
 {
@@ -44,7 +45,7 @@ namespace BackEnd
         }
         public void FindUser(int UserID)
         {
-            tblUserBindingSource.Filter = "UserID = " + Convert.ToString(UserID);
+            tblUserBindingSource1.Filter = "UserID = " + Convert.ToString(UserID);
         }
         
     }

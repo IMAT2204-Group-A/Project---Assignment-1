@@ -35,6 +35,8 @@ namespace BackEnd
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            MainMenuForm main = new MainMenuForm();
+            main.Show();
         }
 
         private void btnEditDVD_Click(object sender, EventArgs e)
@@ -43,10 +45,14 @@ namespace BackEnd
             int DVDID;
             if (lstDVDs.SelectedIndex != -1)
             {
-                DVDID = Convert.ToInt32(lstDVDs.SelectedValue);
+                DVDID = Convert.ToInt32(value: lstDVDs.SelectedValue);
                 DVDEntry.MdiParent = this.MdiParent;
                 DVDEntry.Show();
                 DVDEntry.FindDVD(DVDID);
+            }
+            else
+            {
+                lblErrorMessage.Text = "Please Select an Item from the list above.";
             }
         }
     }

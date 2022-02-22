@@ -44,19 +44,6 @@ namespace BackEnd
             this.tblDVDTableAdapter = new BackEnd.DVDBookDataSetTableAdapters.tblDVDTableAdapter();
             this.tableAdapterManager = new BackEnd.DVDBookDataSetTableAdapters.TableAdapterManager();
             this.tblDVDGenreTableAdapter = new BackEnd.DVDBookDataSetTableAdapters.tblDVDGenreTableAdapter();
-            this.tblDVDBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tblDVDBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dVDIDTextBox = new System.Windows.Forms.TextBox();
             this.dVDNameTextBox = new System.Windows.Forms.TextBox();
             this.dVDDescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -71,6 +58,19 @@ namespace BackEnd
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.tblDVDBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.tblDVDBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             dVDIDLabel = new System.Windows.Forms.Label();
             dVDNameLabel = new System.Windows.Forms.Label();
             dVDDescriptionLabel = new System.Windows.Forms.Label();
@@ -81,10 +81,10 @@ namespace BackEnd
             dVDImageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBookDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingNavigator)).BeginInit();
-            this.tblDVDBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDGenreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDGenreDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingNavigator)).BeginInit();
+            this.tblDVDBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // dVDIDLabel
@@ -191,130 +191,6 @@ namespace BackEnd
             // 
             this.tblDVDGenreTableAdapter.ClearBeforeFill = true;
             // 
-            // tblDVDBindingNavigator
-            // 
-            this.tblDVDBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.tblDVDBindingNavigator.BindingSource = this.tblDVDBindingSource;
-            this.tblDVDBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.tblDVDBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.tblDVDBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.tblDVDBindingNavigatorSaveItem});
-            this.tblDVDBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.tblDVDBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.tblDVDBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.tblDVDBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.tblDVDBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.tblDVDBindingNavigator.Name = "tblDVDBindingNavigator";
-            this.tblDVDBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tblDVDBindingNavigator.Size = new System.Drawing.Size(819, 25);
-            this.tblDVDBindingNavigator.TabIndex = 0;
-            this.tblDVDBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tblDVDBindingNavigatorSaveItem
-            // 
-            this.tblDVDBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tblDVDBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tblDVDBindingNavigatorSaveItem.Image")));
-            this.tblDVDBindingNavigatorSaveItem.Name = "tblDVDBindingNavigatorSaveItem";
-            this.tblDVDBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.tblDVDBindingNavigatorSaveItem.Text = "Save Data";
-            this.tblDVDBindingNavigatorSaveItem.Click += new System.EventHandler(this.tblDVDBindingNavigatorSaveItem_Click);
-            // 
             // dVDIDTextBox
             // 
             this.dVDIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblDVDBindingSource, "DVDID", true));
@@ -415,7 +291,7 @@ namespace BackEnd
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 51);
             this.btnAdd.TabIndex = 18;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Save";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -428,6 +304,131 @@ namespace BackEnd
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // tblDVDBindingNavigatorSaveItem
+            // 
+            this.tblDVDBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tblDVDBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tblDVDBindingNavigatorSaveItem.Image")));
+            this.tblDVDBindingNavigatorSaveItem.Name = "tblDVDBindingNavigatorSaveItem";
+            this.tblDVDBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.tblDVDBindingNavigatorSaveItem.Text = "Save Data";
+            this.tblDVDBindingNavigatorSaveItem.Click += new System.EventHandler(this.tblDVDBindingNavigatorSaveItem_Click);
+            // 
+            // tblDVDBindingNavigator
+            // 
+            this.tblDVDBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.tblDVDBindingNavigator.BindingSource = this.tblDVDBindingSource;
+            this.tblDVDBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.tblDVDBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.tblDVDBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.tblDVDBindingNavigatorSaveItem});
+            this.tblDVDBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.tblDVDBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.tblDVDBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.tblDVDBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.tblDVDBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.tblDVDBindingNavigator.Name = "tblDVDBindingNavigator";
+            this.tblDVDBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.tblDVDBindingNavigator.Size = new System.Drawing.Size(819, 25);
+            this.tblDVDBindingNavigator.TabIndex = 0;
+            this.tblDVDBindingNavigator.Text = "bindingNavigator1";
             // 
             // dvdEntryForm
             // 
@@ -459,11 +460,11 @@ namespace BackEnd
             this.Load += new System.EventHandler(this.dvdEntryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dVDBookDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDVDGenreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDVDGenreDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingNavigator)).EndInit();
             this.tblDVDBindingNavigator.ResumeLayout(false);
             this.tblDVDBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDVDGenreBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDVDGenreDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,19 +476,6 @@ namespace BackEnd
         private System.Windows.Forms.BindingSource tblDVDBindingSource;
         private DVDBookDataSetTableAdapters.tblDVDTableAdapter tblDVDTableAdapter;
         private DVDBookDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator tblDVDBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton tblDVDBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox dVDIDTextBox;
         private System.Windows.Forms.TextBox dVDNameTextBox;
         private System.Windows.Forms.TextBox dVDDescriptionTextBox;
@@ -503,5 +491,18 @@ namespace BackEnd
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton tblDVDBindingNavigatorSaveItem;
+        private System.Windows.Forms.BindingNavigator tblDVDBindingNavigator;
     }
 }

@@ -87,7 +87,7 @@ namespace BackEnd
             this.lstUser.Name = "lstUser";
             this.lstUser.Size = new System.Drawing.Size(656, 324);
             this.lstUser.TabIndex = 3;
-            this.lstUser.ValueMember = "Forename";
+            this.lstUser.ValueMember = "UserID";
             this.lstUser.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // tblUserBindingSource

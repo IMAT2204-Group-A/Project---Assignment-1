@@ -39,6 +39,7 @@ namespace BackEnd
             this.btnRemoveDVD = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBookDataSet)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,7 @@ namespace BackEnd
             this.lstDVDs.Name = "lstDVDs";
             this.lstDVDs.Size = new System.Drawing.Size(629, 316);
             this.lstDVDs.TabIndex = 0;
-            this.lstDVDs.ValueMember = "DVDName";
+            this.lstDVDs.ValueMember = "DVDID";
             // 
             // tblDVDBindingSource
             // 
@@ -72,7 +73,7 @@ namespace BackEnd
             // 
             // btnAddDVD
             // 
-            this.btnAddDVD.Location = new System.Drawing.Point(40, 404);
+            this.btnAddDVD.Location = new System.Drawing.Point(13, 404);
             this.btnAddDVD.Name = "btnAddDVD";
             this.btnAddDVD.Size = new System.Drawing.Size(110, 57);
             this.btnAddDVD.TabIndex = 1;
@@ -82,7 +83,7 @@ namespace BackEnd
             // 
             // btnEditDVD
             // 
-            this.btnEditDVD.Location = new System.Drawing.Point(173, 404);
+            this.btnEditDVD.Location = new System.Drawing.Point(139, 404);
             this.btnEditDVD.Name = "btnEditDVD";
             this.btnEditDVD.Size = new System.Drawing.Size(110, 57);
             this.btnEditDVD.TabIndex = 2;
@@ -92,7 +93,7 @@ namespace BackEnd
             // 
             // btnRemoveDVD
             // 
-            this.btnRemoveDVD.Location = new System.Drawing.Point(301, 404);
+            this.btnRemoveDVD.Location = new System.Drawing.Point(269, 404);
             this.btnRemoveDVD.Name = "btnRemoveDVD";
             this.btnRemoveDVD.Size = new System.Drawing.Size(110, 57);
             this.btnRemoveDVD.TabIndex = 3;
@@ -101,7 +102,7 @@ namespace BackEnd
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(732, 497);
+            this.btnClose.Location = new System.Drawing.Point(661, 473);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(110, 57);
             this.btnClose.TabIndex = 4;
@@ -119,11 +120,21 @@ namespace BackEnd
             this.label1.TabIndex = 5;
             this.label1.Text = "List of DVDs that are stored in the database:";
             // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.Location = new System.Drawing.Point(37, 497);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(0, 20);
+            this.lblErrorMessage.TabIndex = 6;
+            // 
             // dvdStockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 566);
+            this.ClientSize = new System.Drawing.Size(783, 542);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRemoveDVD);
@@ -151,5 +162,6 @@ namespace BackEnd
         private System.Windows.Forms.Button btnRemoveDVD;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }

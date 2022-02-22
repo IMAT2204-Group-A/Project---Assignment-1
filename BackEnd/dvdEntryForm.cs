@@ -51,7 +51,7 @@ namespace BackEnd
             this.Close();
 
         }
-        public void FindDVD( int DVDID)
+        public void FindDVD(int DVDID)
         {
             tblDVDBindingSource.Filter = "DVDID =" + Convert.ToString(DVDID);
         }

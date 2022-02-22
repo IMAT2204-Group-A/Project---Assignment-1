@@ -54,7 +54,7 @@ namespace BackEnd
             int UserID;
             if (lstUser.SelectedIndex != -1)
             {
-                UserID = Convert.ToInt32(value: lstUser.SelectedIndex);
+                UserID = Convert.ToInt32(value: lstUser.SelectedValue);
                 Users.MdiParent = this.MdiParent;
                 Users.Show();
                 Users.FindUser(UserID);
