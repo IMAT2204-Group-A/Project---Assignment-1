@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsDVD.cs" />
     <Compile Include="clsDVDCopy.cs" />
+    <Compile Include="clsDVDGenre.cs" />
     <Compile Include="clsGenre.cs" />
     <Compile Include="clsShop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
