@@ -30,7 +30,6 @@ namespace BackEnd
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lstDVDs = new System.Windows.Forms.ListBox();
             this.tblDVDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dVDBookDataSet = new BackEnd.DVDBookDataSet();
             this.tblDVDTableAdapter = new BackEnd.DVDBookDataSetTableAdapters.tblDVDTableAdapter();
@@ -40,22 +39,10 @@ namespace BackEnd
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.txtDVDList = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tblDVDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dVDBookDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstDVDs
-            // 
-            this.lstDVDs.DataSource = this.tblDVDBindingSource;
-            this.lstDVDs.DisplayMember = "DVDName";
-            this.lstDVDs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F);
-            this.lstDVDs.FormattingEnabled = true;
-            this.lstDVDs.ItemHeight = 24;
-            this.lstDVDs.Location = new System.Drawing.Point(12, 82);
-            this.lstDVDs.Name = "lstDVDs";
-            this.lstDVDs.Size = new System.Drawing.Size(629, 316);
-            this.lstDVDs.TabIndex = 0;
-            this.lstDVDs.ValueMember = "DVDID";
             // 
             // tblDVDBindingSource
             // 
@@ -129,18 +116,27 @@ namespace BackEnd
             this.lblErrorMessage.Size = new System.Drawing.Size(0, 20);
             this.lblErrorMessage.TabIndex = 6;
             // 
+            // txtDVDList
+            // 
+            this.txtDVDList.Location = new System.Drawing.Point(23, 48);
+            this.txtDVDList.Multiline = true;
+            this.txtDVDList.Name = "txtDVDList";
+            this.txtDVDList.Size = new System.Drawing.Size(603, 350);
+            this.txtDVDList.TabIndex = 7;
+            this.txtDVDList.TextChanged += new System.EventHandler(this.txtDVDList_TextChanged);
+            // 
             // dvdStockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 542);
+            this.Controls.Add(this.txtDVDList);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRemoveDVD);
             this.Controls.Add(this.btnEditDVD);
             this.Controls.Add(this.btnAddDVD);
-            this.Controls.Add(this.lstDVDs);
             this.Name = "dvdStockForm";
             this.Text = "Stock View";
             this.Load += new System.EventHandler(this.dvdStockForm_Load);
@@ -152,8 +148,6 @@ namespace BackEnd
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstDVDs;
         private DVDBookDataSet dVDBookDataSet;
         private System.Windows.Forms.BindingSource tblDVDBindingSource;
         private DVDBookDataSetTableAdapters.tblDVDTableAdapter tblDVDTableAdapter;
@@ -163,5 +157,6 @@ namespace BackEnd
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblErrorMessage;
+        private System.Windows.Forms.TextBox txtDVDList;
     }
 }

@@ -75,6 +75,12 @@
     <Compile Include="dvdEntryForm.Designer.cs">
       <DependentUpon>dvdEntryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DVDList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DVDList.Designer.cs">
+      <DependentUpon>DVDList.cs</DependentUpon>
+    </Compile>
     <Compile Include="dvdStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="dvdEntryForm.resx">
       <DependentUpon>dvdEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DVDList.resx">
+      <DependentUpon>DVDList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dvdStockForm.resx">
       <DependentUpon>dvdStockForm.cs</DependentUpon>

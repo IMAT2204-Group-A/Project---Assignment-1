@@ -12,6 +12,8 @@ namespace BackEnd
 {
     public partial class dvdStockForm : Form
     {
+        StringBuilder findString = new StringBuilder();
+        int currentDVD = 0;
         public dvdStockForm()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace BackEnd
 
         private void btnEditDVD_Click(object sender, EventArgs e)
         {
+            /*
             dvdEntryForm DVDEntry = new dvdEntryForm();
             int DVDID;
             if (lstDVDs.SelectedIndex != -1)
@@ -54,6 +57,12 @@ namespace BackEnd
             {
                 lblErrorMessage.Text = "Please Select an Item from the list above.";
             }
+            */
+        }
+
+        private void txtDVDList_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

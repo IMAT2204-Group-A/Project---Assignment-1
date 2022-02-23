@@ -35,6 +35,37 @@ namespace ClassLibraryCJMKLtd
             set { dvdid = value; }
         }
 
+        public string DVDName
+        {
+            get { return dvdname; }
+            set { dvdname = value; }
+        }
+        public string DVDDescription
+        {
+            get { return dvddescription; }
+            set { dvddescription = value; }
+        }
+        public DateTime DVDDateOfRelease
+        {
+            get { return dvddateofrelease; }
+            set { dvddateofrelease = value; }
+        }
+
+        public int DVDLenght
+        {
+            get { return dvdlenght; }
+            set { dvdlenght = value; }
+        }
+        public int SupplierID
+        {
+            get { return supplierid; }
+            set { supplierid = value; }
+        }
+        public string DVDImage
+        {
+            get { return dvdimage; }
+            set { dvdimage = value; }
+        }
         public int CompareTo(object obj)
         {
             throw new NotImplementedException();
