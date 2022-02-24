@@ -15,19 +15,10 @@ namespace ClassLibraryCJMKLtd
         protected string dvddescription;
         protected DateTime dvddateofrelease;
         protected int dvdlenght;
+        protected decimal dvdprice;
         protected int supplierid;
         protected string dvdimage;
 
-        public clsDVD(int dvdID, string dvdName, string dvdDescription, DateTime dvdDateofrelease, int dvdLenght, int supplierID, string dvdImage)
-        {
-            this.dvdid = dvdID;
-            this.dvdname = dvdName;
-            this.dvddescription = dvdDescription;
-            this.dvddateofrelease = dvdDateofrelease;
-            this.dvdlenght = dvdLenght;
-            this.supplierid = supplierID;
-            this.dvdimage = dvdImage;
-        }
 
         public int DVDID
         {
@@ -55,6 +46,11 @@ namespace ClassLibraryCJMKLtd
         {
             get { return dvdlenght; }
             set { dvdlenght = value; }
+        }
+        public decimal DVDPrice
+        {
+            get { return dvdprice; }
+            set { dvdprice = value; }
         }
         public int SupplierID
         {

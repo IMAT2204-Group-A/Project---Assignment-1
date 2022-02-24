@@ -34,6 +34,17 @@ namespace BackEnd
             mainform.Show();
         }
 
+
+        
+
+
+
+
+
+
+
+
+
         private void DVDList_Load(object sender, EventArgs e)
         {
 
@@ -63,5 +74,27 @@ namespace BackEnd
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDVDList_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstDVDs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
     }
 }

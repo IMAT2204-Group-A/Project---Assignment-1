@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDataConnectioncs.cs" />
     <Compile Include="clsDVD.cs" />
+    <Compile Include="clsDVDCollection.cs" />
     <Compile Include="clsDVDCopy.cs" />
+    <Compile Include="clsDVDCopyCollection.cs" />
     <Compile Include="clsDVDGenre.cs" />
     <Compile Include="clsGenre.cs" />
+    <Compile Include="clsGenreCollection.cs" />
     <Compile Include="clsShop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
