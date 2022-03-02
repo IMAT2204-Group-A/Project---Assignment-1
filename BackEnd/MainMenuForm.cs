@@ -19,14 +19,16 @@ namespace BackEnd
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            /*
             this.Close();
             LoginForm lgfm = new LoginForm();
             lgfm.Show();
+            */
         }
 
         private void btnViewStock_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             DVDList dvdlist = new DVDList();
             dvdlist.Show();
         }

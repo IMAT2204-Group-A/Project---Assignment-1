@@ -13,7 +13,7 @@ public class clsDVD : IComparable
     protected string dvdname;
     protected string dvddescription;
     protected DateTime dvddateofrelease;
-    protected int dvdlenght;
+    protected int dvdlength;
     protected decimal dvdprice;
     protected int supplierid;
     protected string dvdimage;
@@ -41,10 +41,10 @@ public class clsDVD : IComparable
         set { dvddateofrelease = value; }
     }
 
-    public int DVDLenght
+    public int DVDLength
     {
-        get { return dvdlenght; }
-        set { dvdlenght = value; }
+        get { return dvdlength; }
+        set { dvdlength = value; }
     }
     public decimal DVDPrice
     {
@@ -86,46 +86,6 @@ public class clsDVD : IComparable
     public int CompareTo(object obj)
     {
         throw new NotImplementedException();
-    }
-
-
-
-    public Int32 Add(clsDVD NewDVD)
-    {
-
-        /* Insert into [tblDVD]
-        (DVDID,DVDName,DVDDescription,DVDDateOfRelease,DVDLength,DVDPrice,SupplierID,DVDImage)*/
-
-
-        clsDataConnection NewDBDVD = new clsDataConnection();
-        //Gather all the parameters, to add new ones in the right places
-        NewDBDVD.AddParameter("@DVDName", NewDVD.DVDName);
-        NewDBDVD.AddParameter("@DVDDescription", NewDVD.DVDDescription);
-        NewDBDVD.AddParameter("@DVDDateOfRelease", NewDVD.DVDDateOfRelease);
-        NewDBDVD.AddParameter("@DVDLength", NewDVD.DVDLenght);
-        NewDBDVD.AddParameter("@DVDPrice", NewDVD.DVDPrice);
-        NewDBDVD.AddParameter("@SupplierID", NewDVD.SupplierID);
-        NewDBDVD.AddParameter("@DVDImage", NewDVD.DVDImage);
-        //Run the procedure in order to add the attributes to the database.
-        return NewDBDVD.Execute("sproc_tblDVD_Insert");
-
-    }
-
-
-    //Method to update available data in the database.
-    public void Update(clsDVD ExistingFilm)
-    {
-        clsDataConnection ExistingDBDVD = new clsDataConnection();
-        //Gather all the attributes
-        ExistingDBDVD.AddParameter("@DVDID", ExistingFilm.DVDID);
-        ExistingDBDVD.AddParameter("@DVDName", ExistingFilm.DVDName);
-        ExistingDBDVD.AddParameter("@DVDDateOfRelease", ExistingFilm.DVDDateOfRelease);
-        ExistingDBDVD.AddParameter("@DVDLenght", ExistingFilm.DVDLenght);
-        ExistingDBDVD.AddParameter("@DVDPrice", ExistingFilm.DVDPrice);
-        ExistingDBDVD.AddParameter("@SupplierID", ExistingFilm.SupplierID);
-        ExistingDBDVD.AddParameter("@DVDImage", ExistingFilm.DVDImage);
-        //Execute the procedure where it will look for given DVDID and exchange the data.
-        ExistingDBDVD.Execute("sproc_tblDVD_Update");
     }
 
     /*

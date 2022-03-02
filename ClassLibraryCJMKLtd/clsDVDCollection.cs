@@ -33,7 +33,7 @@ public class clsDVDCollection
                 NewDVD.DVDName = Convert.ToString(dbConnection.DataTable.Rows[Index]["DVDname"]);
                 NewDVD.DVDDescription = Convert.ToString(dbConnection.DataTable.Rows[Index]["DVDDescription"]);
                 NewDVD.DVDDateOfRelease = Convert.ToDateTime(dbConnection.DataTable.Rows[Index]["DVDDateOfRelease"]);
-                NewDVD.DVDLenght = Convert.ToInt32(dbConnection.DataTable.Rows[Index]["DVDLenght"]);
+                NewDVD.DVDLength = Convert.ToInt32(dbConnection.DataTable.Rows[Index]["DVDLength"]);
                 NewDVD.DVDPrice = Convert.ToDecimal(dbConnection.DataTable.Rows[Index]["DVDPrice"]);
                 NewDVD.SupplierID = Convert.ToInt32(dbConnection.DataTable.Rows[Index]["SupplierID"]);
                 NewDVD.DVDImage = Convert.ToString(dbConnection.DataTable.Rows[Index]["DVDImage"]);
@@ -65,7 +65,7 @@ public class clsDVDCollection
         NewDBDVD.AddParameter("@DVDName", ThisDVD.DVDName);
         NewDBDVD.AddParameter("@DVDDescription", ThisDVD.DVDDescription);
         NewDBDVD.AddParameter("@DVDDateOfRelease", ThisDVD.DVDDateOfRelease);
-        NewDBDVD.AddParameter("@DVDLength", ThisDVD.DVDLenght);
+        NewDBDVD.AddParameter("@DVDLength", ThisDVD.DVDLength);
         NewDBDVD.AddParameter("@DVDPrice", ThisDVD.DVDPrice);
         NewDBDVD.AddParameter("@SupplierID", ThisDVD.SupplierID);
         NewDBDVD.AddParameter("@DVDImage", ThisDVD.DVDImage);
@@ -81,7 +81,7 @@ public class clsDVDCollection
         ExistingDBDVD.AddParameter("@DVDID", mThisDVD.DVDID);
         ExistingDBDVD.AddParameter("@DVDName", mThisDVD.DVDName);
         ExistingDBDVD.AddParameter("@DVDDateOfRelease", mThisDVD.DVDDateOfRelease);
-        ExistingDBDVD.AddParameter("@DVDLenght", mThisDVD.DVDLenght);
+        ExistingDBDVD.AddParameter("@DVDLenght", mThisDVD.DVDLength);
         ExistingDBDVD.AddParameter("@DVDPrice", mThisDVD.DVDPrice);
         ExistingDBDVD.AddParameter("@SupplierID", mThisDVD.SupplierID);
         ExistingDBDVD.AddParameter("@DVDImage", mThisDVD.DVDImage);
@@ -104,11 +104,22 @@ public class clsDVDCollection
             return false;
         }
     }
-    public void FilterByGenre(String GenreName)
+    
+    public void FilterByGenre(int genreId)
     {
+        
+
+            dbConnection = new clsDataConnection();
+            dbConnection.AddParameter("@GenreId", genreId);
+            dbConnection.Execute("sproc_tblDVD_FilterByGenreId");
+    }
+
+    public void GetAll()
+    {
+
+
         dbConnection = new clsDataConnection();
-        dbConnection.AddParameter("@GenreName", GenreName);
-        dbConnection.Execute("sproc_tblGenre_FilterByGenreName");
+        dbConnection.Execute("sproc_tblDVD_SelectAll");
     }
 
 

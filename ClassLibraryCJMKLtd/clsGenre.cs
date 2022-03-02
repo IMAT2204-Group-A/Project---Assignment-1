@@ -4,20 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-[Serializable()]
 public class clsGenre
 {
-    protected int genreid;
-    protected string genrename;
+    private int genreid;
+    private string genrename;
 
 
     public int GenreID
     {
         get { return genreid; }
-        set { value = genreid; }
+        set { genreid = value; }
     }
-    public string GenreName;
+    public string GenreName
+    {
+        get { return genrename; }
+        set { genrename = value; }
+    }
 
 }
 

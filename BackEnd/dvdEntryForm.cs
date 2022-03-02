@@ -44,7 +44,7 @@ namespace BackEnd
                     DVDShop.ThisDVD.DVDName = txtDVDName.Text;
                     DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
                     DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(DTPDVDDateOfRelease.Text);
-                    DVDShop.ThisDVD.DVDLenght = Convert.ToInt32(txtDVDLenght.Text);
+                    DVDShop.ThisDVD.DVDLength = Convert.ToInt32(txtDVDLenght.Text);
                     DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
                     DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
                     DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);
@@ -56,7 +56,7 @@ namespace BackEnd
                     DVDShop.ThisDVD.DVDName = txtDVDName.Text;
                     DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
                     DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(DTPDVDDateOfRelease.Text);
-                    DVDShop.ThisDVD.DVDLenght = Convert.ToInt32(txtDVDLenght.Text);
+                    DVDShop.ThisDVD.DVDLength = Convert.ToInt32(txtDVDLenght.Text);
                     DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
                     DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
                     DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);

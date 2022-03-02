@@ -7,36 +7,43 @@ using System.Threading.Tasks;
 
 public class clsGenreCollection
 {
-    clsDataConnection Genres = new clsDataConnection();
+    clsDataConnection dbConnection = new clsDataConnection();
 
     public clsGenreCollection()
     {
-        Genres.Execute("sproc_tblDVDGenre_SelectAll");
+        dbConnection.Execute("sproc_tblDVDGenre_SelectAll");
     }
     public Int32 Count
     {
         get
         {
-            return Genres.Count;
+            return dbConnection.Count;
         }
     }
   
-    public List<clsGenre> clsGenres
+    public List<clsGenre> GenresList
     {
         get
         {
             List<clsGenre> mAllGenres = new List<clsGenre>();
             Int32 Index = 0;
-            while (Index < Genres.Count)
+            while (Index < dbConnection.Count)
             {
                 clsGenre NewGenre = new clsGenre();
-                NewGenre.GenreID = Convert.ToInt32(Genres.DataTable.Rows[Index]["GenreID"]);
-                NewGenre.GenreName = Convert.ToString(Genres.DataTable.Rows[Index]["GenreName"]);
+                NewGenre.GenreID = Convert.ToInt32(dbConnection.DataTable.Rows[Index][0]);
+                NewGenre.GenreName = Convert.ToString(dbConnection.DataTable.Rows[Index][1]);
                 mAllGenres.Add(NewGenre);
                 Index++;
             }
             return mAllGenres;
         }
+    }
+
+    public void FilterByGenreName(string GenreName)
+    {
+        dbConnection = new clsDataConnection();
+        dbConnection.AddParameter("@GenreName", GenreName);
+        dbConnection.Execute("sproc_tblGenre_FilterByGenreName");
     }
 }
     
