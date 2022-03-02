@@ -29,8 +29,6 @@ namespace BackEnd
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.btnDisplayAll = new System.Windows.Forms.Button();
             this.btnFindDVD = new System.Windows.Forms.Button();
             this.btnAddNewDVD = new System.Windows.Forms.Button();
@@ -40,28 +38,10 @@ namespace BackEnd
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lstDVDs = new System.Windows.Forms.ListBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Location = new System.Drawing.Point(721, 455);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(83, 44);
-            this.btnPrevious.TabIndex = 1;
-            this.btnPrevious.Text = "Previous";
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(810, 455);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(83, 44);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnDisplayAll
             // 
@@ -76,7 +56,7 @@ namespace BackEnd
             // btnFindDVD
             // 
             this.btnFindDVD.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFindDVD.Location = new System.Drawing.Point(126, 451);
+            this.btnFindDVD.Location = new System.Drawing.Point(408, 454);
             this.btnFindDVD.Name = "btnFindDVD";
             this.btnFindDVD.Size = new System.Drawing.Size(83, 44);
             this.btnFindDVD.TabIndex = 4;
@@ -86,7 +66,7 @@ namespace BackEnd
             // 
             // btnAddNewDVD
             // 
-            this.btnAddNewDVD.Location = new System.Drawing.Point(229, 451);
+            this.btnAddNewDVD.Location = new System.Drawing.Point(511, 454);
             this.btnAddNewDVD.Name = "btnAddNewDVD";
             this.btnAddNewDVD.Size = new System.Drawing.Size(83, 44);
             this.btnAddNewDVD.TabIndex = 5;
@@ -96,7 +76,7 @@ namespace BackEnd
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(27, 373);
+            this.btnReport.Location = new System.Drawing.Point(615, 454);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(75, 52);
             this.btnReport.TabIndex = 6;
@@ -106,7 +86,7 @@ namespace BackEnd
             // 
             // BtnSaveToFile
             // 
-            this.BtnSaveToFile.Location = new System.Drawing.Point(108, 373);
+            this.BtnSaveToFile.Location = new System.Drawing.Point(721, 451);
             this.BtnSaveToFile.Name = "BtnSaveToFile";
             this.BtnSaveToFile.Size = new System.Drawing.Size(75, 51);
             this.BtnSaveToFile.TabIndex = 7;
@@ -154,11 +134,32 @@ namespace BackEnd
             this.lstDVDs.TabIndex = 11;
             this.lstDVDs.SelectedIndexChanged += new System.EventHandler(this.lstDVDs_SelectedIndexChanged);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(120, 451);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(93, 44);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Add ";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(219, 451);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(93, 44);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
             // DVDList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 511);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lstDVDs);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -168,10 +169,8 @@ namespace BackEnd
             this.Controls.Add(this.btnAddNewDVD);
             this.Controls.Add(this.btnFindDVD);
             this.Controls.Add(this.btnDisplayAll);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnPrevious);
             this.Name = "DVDList";
-            this.Text = " ";
+            this.Text = " DVD List";
             this.Load += new System.EventHandler(this.DVDList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -180,8 +179,6 @@ namespace BackEnd
         }
 
         #endregion
-        private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnDisplayAll;
         private System.Windows.Forms.Button btnFindDVD;
         private System.Windows.Forms.Button btnAddNewDVD;
@@ -191,5 +188,7 @@ namespace BackEnd
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstDVDs;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -12,38 +12,57 @@ namespace BackEnd
 {
     public partial class dvdEntryForm : Form
     {
+        Int32 DVDID;
         public dvdEntryForm()
         {
             InitializeComponent();
         }
 
-        private void tblDVDBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tblDVDBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dVDBookDataSet);
-
-        }
-
         private void dvdEntryForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dVDBookDataSet.tblDVDGenre' table. You can move, or remove it, as needed.
-            this.tblDVDGenreTableAdapter.Fill(this.dVDBookDataSet.tblDVDGenre);
-            // TODO: This line of code loads data into the 'dVDBookDataSet.tblDVDGenre' table. You can move, or remove it, as needed.
-            this.tblDVDGenreTableAdapter.Fill(this.dVDBookDataSet.tblDVDGenre);
-            // TODO: This line of code loads data into the 'dVDBookDataSet.tblDVD' table. You can move, or remove it, as needed.
-            this.tblDVDTableAdapter.Fill(this.dVDBookDataSet.tblDVD);
 
-        }
-        public void addNewDVD()
-        {
-            tblDVDBindingSource.AddNew();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.tblDVDBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dVDBookDataSet);
+            clsDVD ThisDVD = new clsDVD();
+            string ErrorMessage;
+            ErrorMessage = ThisDVD.FilmValid(txtDVDName.Text,
+                                             txtDVDDescription.Text,
+                                             Convert.ToDateTime(DTPDVDDateOfRelease.Text),
+                                             Convert.ToInt32(txtDVDLenght.Text),
+                                            Convert.ToDecimal(txtDVDPrice.Text),
+                                            Convert.ToInt32(txtSupplierID.Text),
+                                             txtDVDImage.Text);
+            if (ErrorMessage == "")
+            {
+                clsDVDCollection DVDShop = new clsDVDCollection();
+                if (DVDID == -1)
+                {
+                    DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID);
+                    DVDShop.ThisDVD.DVDName = txtDVDName.Text;
+                    DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
+                    DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(DTPDVDDateOfRelease.Text);
+                    DVDShop.ThisDVD.DVDLenght = Convert.ToInt32(txtDVDLenght.Text);
+                    DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
+                    DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
+                    DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);
+                    DVDShop.Add();
+                }
+                else
+                {
+                    DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID);
+                    DVDShop.ThisDVD.DVDName = txtDVDName.Text;
+                    DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
+                    DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(DTPDVDDateOfRelease.Text);
+                    DVDShop.ThisDVD.DVDLenght = Convert.ToInt32(txtDVDLenght.Text);
+                    DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
+                    DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
+                    DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);
+                    DVDShop.Update();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -53,7 +72,6 @@ namespace BackEnd
         }
         public void FindDVD(int DVDID)
         {
-            tblDVDBindingSource.Filter = "DVDID =" + Convert.ToString(DVDID);
         }
     }
 }

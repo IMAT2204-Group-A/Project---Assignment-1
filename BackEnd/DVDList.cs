@@ -6,15 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using ClassLibraryCJMKLtd;
+
 
 namespace BackEnd
 {
+   
+
     public partial class DVDList : Form
     {
         public DVDList()
         {
             InitializeComponent();
+            DisplayDVDs("");
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -24,7 +30,7 @@ namespace BackEnd
 
         private void btnDisplayAll_Click(object sender, EventArgs e)
         {
-            //Opens new form, with the list of all DVDs In the database...
+            DisplayDVDs("");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -47,7 +53,7 @@ namespace BackEnd
 
         private void DVDList_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -91,10 +97,45 @@ namespace BackEnd
         }
 
 
+        Int32 DisplayDVDs(string GenreFilter)
+        {
+            clsDVDCollection DVDShop = new clsDVDCollection();
+            Int32 RecordCount;
+            string DVDName;
+            string DVDDescription;
+            DateTime DVDDateOfRelease;
+            Int32 DVDLength;
+            Decimal DVDPrice;
+            Int32 SupplierID;
+            string DVDImage;
+            Int32 Index = 0;
+            lstDVDs.Items.Clear();
+            DVDShop.FilterByGenre(GenreFilter);
+            RecordCount = DVDShop.Count;
+            while (Index < RecordCount)
+            {
+                DVDName = Convert.ToString(DVDShop.DVDs[Index].DVDName);
+                DVDDescription = Convert.ToString(DVDShop.DVDs[Index].DVDDescription);
+                DVDDateOfRelease = Convert.ToDateTime(DVDShop.DVDs[Index].DVDDateOfRelease);
+                DVDLength = Convert.ToInt32(DVDShop.DVDs[Index].DVDLenght);
+                DVDPrice = Convert.ToDecimal(DVDShop.DVDs[Index].DVDPrice);
+                SupplierID = Convert.ToInt32(DVDShop.DVDs[Index].SupplierID);
+                DVDImage = Convert.ToString(DVDShop.DVDs[Index].DVDImage);
+                ListItem NewItem = new ListItem(DVDName + " " + DVDDescription + " " + DVDDateOfRelease + " " + DVDLength + " " + DVDPrice + " " + SupplierID + " " + DVDImage);
+                lstDVDs.Items.Add(NewItem);
 
+                Index++;
+            }
+            return RecordCount;
+        }
 
-
-
-
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+            dvdEntryForm NewDVD = new dvdEntryForm();
+            NewDVD.Show();
+            
+            this.Close();
+        }
     }
 }

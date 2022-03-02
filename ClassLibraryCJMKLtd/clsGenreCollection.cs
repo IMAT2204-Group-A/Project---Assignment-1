@@ -31,8 +31,11 @@ public class clsGenreCollection
             {
                 clsGenre NewGenre = new clsGenre();
                 NewGenre.GenreID = Convert.ToInt32(Genres.DataTable.Rows[Index]["GenreID"]);
-                NewGenre.
+                NewGenre.GenreName = Convert.ToString(Genres.DataTable.Rows[Index]["GenreName"]);
+                mAllGenres.Add(NewGenre);
+                Index++;
             }
+            return mAllGenres;
         }
     }
 }
