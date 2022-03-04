@@ -88,7 +88,7 @@ public class clsDVD : IComparable
         throw new NotImplementedException();
     }
 
-    /*
+    
     public Int32 Find(Int32 DVDID)
     {
         clsDataConnection dBConnection = new clsDataConnection();
@@ -99,25 +99,15 @@ public class clsDVD : IComparable
             dvdid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@DVDID"]);
             dvdname = Convert.ToString(dBConnection.DataTable.Rows[0]["@DVDName"]);
             dvddateofrelease = Convert.ToDateTime(dBConnection.DataTable.Rows[0]["@DVDDateOfRelease"]);
-            dvdlenght = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@DVDLenght"]);
+            dvdlength = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@DVDLenght"]);
             dvdprice = Convert.ToDecimal(dBConnection.DataTable.Rows[0]["@DVDPrice"]);
             supplierid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@SupplierID"]);
             dvdimage = Convert.ToString(dBConnection.DataTable.Rows[0]["@DVDImage"]);
-
-            try
-            {
-                dvdid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@DVDID"]);
-            }
-            finally
-            {
-
-            }
-            return DVDID;
-
-
         }
+        return DVDID;
+
     }
-    */
+
 
 }
 

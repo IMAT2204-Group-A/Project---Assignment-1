@@ -15,12 +15,13 @@ namespace BackEnd
 {
    
 
-    public partial class DVDList : Form
+    public partial class DVDListForm : Form
     {
-        public DVDList()
+        public DVDListForm()
         {
             InitializeComponent();
             DisplayDVDs("");
+            cbGenreFilter.ResetText();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace BackEnd
         private void btnDisplayAll_Click(object sender, EventArgs e)
         {
             DisplayDVDs("");
+            cbGenreFilter.ResetText();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -41,19 +43,12 @@ namespace BackEnd
         }
 
 
-        
-
-
-
-
-
-
-
-
 
         private void DVDList_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'dVDBookDataSet.tblGenre' table. You can move, or remove it, as needed.
+            this.tblGenreTableAdapter.Fill(this.dVDBookDataSet.tblGenre);
+
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -71,10 +66,6 @@ namespace BackEnd
 
         }
 
-        private void btnAddNewDVD_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -137,7 +128,7 @@ namespace BackEnd
                 DVDPrice = Convert.ToDecimal(DVDShop.DVDs[Index].DVDPrice);
                 SupplierID = Convert.ToInt32(DVDShop.DVDs[Index].SupplierID);
                 DVDImage = Convert.ToString(DVDShop.DVDs[Index].DVDImage);
-                ListItem NewItem = new ListItem(DVDName + " " + DVDDescription + " " + DVDDateOfRelease + " " + DVDLength + " " + DVDPrice + " " + SupplierID + " " + DVDImage);
+                ListItem NewItem = new ListItem(DVDName + "  | " + DVDDescription + " |  " + DVDDateOfRelease + " |  " + DVDLength + " |  " + DVDPrice + "  | " + SupplierID + "  | " + DVDImage);
                 lstDVDs.Items.Add(NewItem);
 
                 Index++;
@@ -148,10 +139,32 @@ namespace BackEnd
         private void btnAdd_Click(object sender, EventArgs e)
         {
             
-            dvdEntryForm NewDVD = new dvdEntryForm();
+            DVDEntryForm NewDVD = new DVDEntryForm();
             NewDVD.Show();
             
             this.Close();
+        }
+
+        private void cbGenreFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayDVDs(cbGenreFilter.Text);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Int32 DVDID;
+            if (lstDVDs.SelectedIndex != -1)
+            {
+                DVDEntryForm entryform = new DVDEntryForm();
+                DVDID = Convert.ToInt32(lstDVDs.SelectedValue);
+                //to be changed
+                entryform.FindDVD(DVDID);
+                entryform.Show();
+            }
+            else
+            {
+                lblError.Text = "Please select an item to edit!";
+            }
         }
     }
 }
