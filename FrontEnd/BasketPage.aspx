@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3>Basket Page</h3>
     <input class="SearchBar" type="text" placeholder="Search.."/>
+    
     <br /><br />
 
 </asp:Content>

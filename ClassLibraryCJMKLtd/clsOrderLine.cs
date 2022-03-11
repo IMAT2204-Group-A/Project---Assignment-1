@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryCJMKLtd
 {
-    class clsOrderLine
+    public class clsOrderLine
     {
         private Int32 mOrderLineId;
 
@@ -19,7 +19,7 @@ namespace ClassLibraryCJMKLtd
 
         private Int32 mOrderID;
 
-        public Int32 OrderidID
+        public Int32 OrderID
         {
             get { return mOrderID; }
 

@@ -4,30 +4,32 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ClassLibraryCJMKLtd;
+
 
 namespace FrontEnd
 {
     public partial class ProductsPage : System.Web.UI.Page
     {
+        clsBasket MyBasket = new clsBasket();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //upon loading the page you need to read in the cart from the session object
+            MyBasket = (clsBasket)Session["MyBasket"];
+            //if the cart is null then we need to initialise it
+            if (MyBasket == null)
+            {
+                MyBasket = new clsBasket();
+            }
+            //then you can display how many items are in your cart
+            lblCartCount.Text = MyBasket.Products.Count.ToString();
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Page_UnLoad(object sender, EventArgs e)
         {
-            Response.Redirect("ProductDetailsPage.aspx");
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ProductDetailsPage.aspx");
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ProductDetailsPage.aspx");
+            //you must also save the cart every time the unload event takes place
+            Session["MyBasket"] = MyBasket;
         }
     }
 }

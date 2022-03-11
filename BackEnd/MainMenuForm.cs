@@ -16,5 +16,11 @@ namespace BackEnd
         {
             InitializeComponent();
         }
+
+        private void buttonViewOrders_Click(object sender, EventArgs e)
+        {
+            ViewOrders Orders = new ViewOrders();
+            Orders.Show();
+        }
     }
 }

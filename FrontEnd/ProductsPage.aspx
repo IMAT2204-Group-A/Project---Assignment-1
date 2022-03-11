@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width: 100%;">
+        your cart has <asp:Label ID="lblCartCount" runat="server"></asp:Label>
+        <a href="BasketPage.aspx">View Basket</a>
         <tr>
             <th style="font-size: 25px;" class="auto-style4">Products</th>
             <th class="auto-style5">Product 2</th>
