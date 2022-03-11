@@ -100,7 +100,9 @@ namespace TDDUnitTest
             decimal testData = 0m;
             //setting the quantity
             int userID = 1;
-            string message = aDVDShop.Valid(testData, price);
+            DateTime orderDate = DateTime.Now.Date;
+            string status = "Pending";
+            string message = aDVDShop.Valid(testData, userID, orderDate, status);
             //getting the message from the class and comparing it with the validation
             Assert.AreEqual(message, "Not enough dolla");
         }
