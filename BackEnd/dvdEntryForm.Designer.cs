@@ -37,6 +37,7 @@ namespace BackEnd
             System.Windows.Forms.Label dVDPriceLabel;
             System.Windows.Forms.Label supplierIDLabel;
             System.Windows.Forms.Label dVDImageLabel;
+            System.Windows.Forms.Label label2;
             this.txtDVDID = new System.Windows.Forms.TextBox();
             this.txtDVDName = new System.Windows.Forms.TextBox();
             this.txtDVDDescription = new System.Windows.Forms.TextBox();
@@ -58,12 +59,13 @@ namespace BackEnd
             dVDPriceLabel = new System.Windows.Forms.Label();
             supplierIDLabel = new System.Windows.Forms.Label();
             dVDImageLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dVDIDLabel
             // 
             dVDIDLabel.AutoSize = true;
-            dVDIDLabel.Location = new System.Drawing.Point(17, 11);
+            dVDIDLabel.Location = new System.Drawing.Point(17, 78);
             dVDIDLabel.Name = "dVDIDLabel";
             dVDIDLabel.Size = new System.Drawing.Size(44, 13);
             dVDIDLabel.TabIndex = 1;
@@ -72,7 +74,7 @@ namespace BackEnd
             // dVDNameLabel
             // 
             dVDNameLabel.AutoSize = true;
-            dVDNameLabel.Location = new System.Drawing.Point(17, 42);
+            dVDNameLabel.Location = new System.Drawing.Point(17, 109);
             dVDNameLabel.Name = "dVDNameLabel";
             dVDNameLabel.Size = new System.Drawing.Size(61, 13);
             dVDNameLabel.TabIndex = 3;
@@ -81,7 +83,7 @@ namespace BackEnd
             // dVDDescriptionLabel
             // 
             dVDDescriptionLabel.AutoSize = true;
-            dVDDescriptionLabel.Location = new System.Drawing.Point(17, 74);
+            dVDDescriptionLabel.Location = new System.Drawing.Point(17, 141);
             dVDDescriptionLabel.Name = "dVDDescriptionLabel";
             dVDDescriptionLabel.Size = new System.Drawing.Size(86, 13);
             dVDDescriptionLabel.TabIndex = 5;
@@ -90,7 +92,7 @@ namespace BackEnd
             // dVDDateOfReleaseLabel
             // 
             dVDDateOfReleaseLabel.AutoSize = true;
-            dVDDateOfReleaseLabel.Location = new System.Drawing.Point(17, 241);
+            dVDDateOfReleaseLabel.Location = new System.Drawing.Point(17, 308);
             dVDDateOfReleaseLabel.Name = "dVDDateOfReleaseLabel";
             dVDDateOfReleaseLabel.Size = new System.Drawing.Size(112, 13);
             dVDDateOfReleaseLabel.TabIndex = 7;
@@ -99,7 +101,7 @@ namespace BackEnd
             // dVDLengthLabel
             // 
             dVDLengthLabel.AutoSize = true;
-            dVDLengthLabel.Location = new System.Drawing.Point(17, 273);
+            dVDLengthLabel.Location = new System.Drawing.Point(17, 340);
             dVDLengthLabel.Name = "dVDLengthLabel";
             dVDLengthLabel.Size = new System.Drawing.Size(66, 13);
             dVDLengthLabel.TabIndex = 9;
@@ -108,7 +110,7 @@ namespace BackEnd
             // dVDPriceLabel
             // 
             dVDPriceLabel.AutoSize = true;
-            dVDPriceLabel.Location = new System.Drawing.Point(17, 303);
+            dVDPriceLabel.Location = new System.Drawing.Point(17, 370);
             dVDPriceLabel.Name = "dVDPriceLabel";
             dVDPriceLabel.Size = new System.Drawing.Size(57, 13);
             dVDPriceLabel.TabIndex = 11;
@@ -117,7 +119,7 @@ namespace BackEnd
             // supplierIDLabel
             // 
             supplierIDLabel.AutoSize = true;
-            supplierIDLabel.Location = new System.Drawing.Point(17, 333);
+            supplierIDLabel.Location = new System.Drawing.Point(17, 400);
             supplierIDLabel.Name = "supplierIDLabel";
             supplierIDLabel.Size = new System.Drawing.Size(62, 13);
             supplierIDLabel.TabIndex = 13;
@@ -126,7 +128,7 @@ namespace BackEnd
             // dVDImageLabel
             // 
             dVDImageLabel.AutoSize = true;
-            dVDImageLabel.Location = new System.Drawing.Point(17, 369);
+            dVDImageLabel.Location = new System.Drawing.Point(17, 436);
             dVDImageLabel.Name = "dVDImageLabel";
             dVDImageLabel.Size = new System.Drawing.Size(62, 13);
             dVDImageLabel.TabIndex = 15;
@@ -134,21 +136,21 @@ namespace BackEnd
             // 
             // txtDVDID
             // 
-            this.txtDVDID.Location = new System.Drawing.Point(135, 8);
+            this.txtDVDID.Location = new System.Drawing.Point(135, 75);
             this.txtDVDID.Name = "txtDVDID";
             this.txtDVDID.Size = new System.Drawing.Size(100, 20);
             this.txtDVDID.TabIndex = 2;
             // 
             // txtDVDName
             // 
-            this.txtDVDName.Location = new System.Drawing.Point(135, 42);
+            this.txtDVDName.Location = new System.Drawing.Point(135, 109);
             this.txtDVDName.Name = "txtDVDName";
             this.txtDVDName.Size = new System.Drawing.Size(100, 20);
             this.txtDVDName.TabIndex = 4;
             // 
             // txtDVDDescription
             // 
-            this.txtDVDDescription.Location = new System.Drawing.Point(135, 71);
+            this.txtDVDDescription.Location = new System.Drawing.Point(135, 138);
             this.txtDVDDescription.Multiline = true;
             this.txtDVDDescription.Name = "txtDVDDescription";
             this.txtDVDDescription.Size = new System.Drawing.Size(275, 76);
@@ -156,35 +158,35 @@ namespace BackEnd
             // 
             // txtDVDLenght
             // 
-            this.txtDVDLenght.Location = new System.Drawing.Point(135, 270);
+            this.txtDVDLenght.Location = new System.Drawing.Point(135, 337);
             this.txtDVDLenght.Name = "txtDVDLenght";
             this.txtDVDLenght.Size = new System.Drawing.Size(100, 20);
             this.txtDVDLenght.TabIndex = 10;
             // 
             // txtDVDPrice
             // 
-            this.txtDVDPrice.Location = new System.Drawing.Point(135, 300);
+            this.txtDVDPrice.Location = new System.Drawing.Point(135, 367);
             this.txtDVDPrice.Name = "txtDVDPrice";
             this.txtDVDPrice.Size = new System.Drawing.Size(100, 20);
             this.txtDVDPrice.TabIndex = 12;
             // 
             // txtSupplierID
             // 
-            this.txtSupplierID.Location = new System.Drawing.Point(135, 330);
+            this.txtSupplierID.Location = new System.Drawing.Point(135, 397);
             this.txtSupplierID.Name = "txtSupplierID";
             this.txtSupplierID.Size = new System.Drawing.Size(100, 20);
             this.txtSupplierID.TabIndex = 14;
             // 
             // txtDVDImage
             // 
-            this.txtDVDImage.Location = new System.Drawing.Point(135, 366);
+            this.txtDVDImage.Location = new System.Drawing.Point(135, 433);
             this.txtDVDImage.Name = "txtDVDImage";
             this.txtDVDImage.Size = new System.Drawing.Size(100, 20);
             this.txtDVDImage.TabIndex = 16;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 408);
+            this.btnAdd.Location = new System.Drawing.Point(12, 475);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 51);
             this.btnAdd.TabIndex = 18;
@@ -194,7 +196,7 @@ namespace BackEnd
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(135, 408);
+            this.btnCancel.Location = new System.Drawing.Point(135, 475);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(113, 51);
             this.btnCancel.TabIndex = 19;
@@ -212,7 +214,7 @@ namespace BackEnd
             // 
             // txtDVDDateOfRelease
             // 
-            this.txtDVDDateOfRelease.Location = new System.Drawing.Point(135, 234);
+            this.txtDVDDateOfRelease.Location = new System.Drawing.Point(135, 301);
             this.txtDVDDateOfRelease.Name = "txtDVDDateOfRelease";
             this.txtDVDDateOfRelease.Size = new System.Drawing.Size(177, 20);
             this.txtDVDDateOfRelease.TabIndex = 21;
@@ -220,7 +222,7 @@ namespace BackEnd
             // lstGenreList
             // 
             this.lstGenreList.FormattingEnabled = true;
-            this.lstGenreList.Location = new System.Drawing.Point(135, 153);
+            this.lstGenreList.Location = new System.Drawing.Point(135, 220);
             this.lstGenreList.Name = "lstGenreList";
             this.lstGenreList.Size = new System.Drawing.Size(162, 69);
             this.lstGenreList.TabIndex = 22;
@@ -229,17 +231,28 @@ namespace BackEnd
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 153);
+            this.label1.Location = new System.Drawing.Point(17, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Genres";
             // 
-            // dvdEntryForm
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(17, 9);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(232, 36);
+            label2.TabIndex = 24;
+            label2.Text = "DVD Entry Form";
+            // 
+            // DVDEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 471);
+            this.ClientSize = new System.Drawing.Size(579, 538);
+            this.Controls.Add(label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstGenreList);
             this.Controls.Add(this.txtDVDDateOfRelease);
@@ -261,8 +274,8 @@ namespace BackEnd
             this.Controls.Add(this.txtDVDName);
             this.Controls.Add(dVDIDLabel);
             this.Controls.Add(this.txtDVDID);
-            this.Name = "dvdEntryForm";
-            this.Text = "dvdEntryForm";
+            this.Name = "DVDEntryForm";
+            this.Text = "DVD Entry Form";
             this.Load += new System.EventHandler(this.dvdEntryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

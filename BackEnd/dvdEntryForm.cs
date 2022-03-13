@@ -30,7 +30,7 @@ namespace BackEnd
         {
             clsDVD ThisDVD = new clsDVD();
             string ErrorMessage;
-            ErrorMessage = ThisDVD.FilmValid(txtDVDName.Text,
+            ErrorMessage = ThisDVD.DVDValid(txtDVDName.Text,
                                              txtDVDDescription.Text,
                                              Convert.ToDateTime(txtDVDDateOfRelease.Text),
                                              Convert.ToInt32(txtDVDLenght.Text),
@@ -77,12 +77,10 @@ namespace BackEnd
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            DVDListForm dvdList = new DVDListForm();
-            dvdList.Show();
-
         }
         public void FindDVD(int DVDID)
         {
+
         }
 
 

@@ -17,12 +17,12 @@ namespace BackEnd
         public GenreListForm()
         {
             InitializeComponent();
-            DisplayGenres();
+            DisplayGenres("");
         }
 
         private void GenreListForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -42,10 +42,10 @@ namespace BackEnd
 
         private void btnDisplayAll_Click(object sender, EventArgs e)
         {
-            DisplayGenres();
+            DisplayGenres("");
         }
 
-        Int32 DisplayGenres()
+        Int32 DisplayGenres(string GenreNameFilter)
         {
             clsGenreCollection GenreCollection = new clsGenreCollection();
             Int32 RecordCount;
@@ -53,6 +53,7 @@ namespace BackEnd
             string GenreName;
             Int32 Index = 0;
             lstGenres.Items.Clear();
+            GenreCollection.FilterByGenreName(GenreNameFilter);
             RecordCount = GenreCollection.Count;
             while (Index < RecordCount)
             {
@@ -64,6 +65,10 @@ namespace BackEnd
             }
             return RecordCount;
         }
-        
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            DisplayGenres(txtGenreNameFilter.Text);
+        }
     }
 }

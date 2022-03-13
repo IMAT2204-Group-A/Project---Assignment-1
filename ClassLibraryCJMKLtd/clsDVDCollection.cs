@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +70,7 @@ public class clsDVDCollection
         NewDBDVD.AddParameter("@SupplierID", ThisDVD.SupplierID);
         NewDBDVD.AddParameter("@DVDImage", ThisDVD.DVDImage);
         //Run the procedure in order to add the attributes to the database.
-        return NewDBDVD.Execute("sproc_tblDVD_Insert");
+        return NewDBDVD.Execute("sproc_tblDVD_AddNew");
 
     }
     //Method to update available data in the database.
@@ -107,8 +107,6 @@ public class clsDVDCollection
     
     public void FilterByGenre(int genreId)
     {
-        
-
             dbConnection = new clsDataConnection();
             dbConnection.AddParameter("@GenreId", genreId);
             dbConnection.Execute("sproc_tblDVD_FilterByGenreId");
@@ -116,13 +114,9 @@ public class clsDVDCollection
 
     public void GetAll()
     {
-
-
         dbConnection = new clsDataConnection();
         dbConnection.Execute("sproc_tblDVD_SelectAll");
     }
-
-
 }
 
 

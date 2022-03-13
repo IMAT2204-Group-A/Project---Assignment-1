@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibraryCJMKLtd;
 
 public class clsGenre
 {
     private int genreid;
     private string genrename;
+
 
 
     public int GenreID
@@ -20,6 +22,8 @@ public class clsGenre
         get { return genrename; }
         set { genrename = value; }
     }
+
+
 
 }
 

@@ -33,7 +33,6 @@ namespace BackEnd
             this.btnDisplayAll = new System.Windows.Forms.Button();
             this.btnFindDVD = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.BtnSaveToFile = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,7 +71,7 @@ namespace BackEnd
             // btnFindDVD
             // 
             this.btnFindDVD.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFindDVD.Location = new System.Drawing.Point(408, 454);
+            this.btnFindDVD.Location = new System.Drawing.Point(342, 454);
             this.btnFindDVD.Name = "btnFindDVD";
             this.btnFindDVD.Size = new System.Drawing.Size(83, 44);
             this.btnFindDVD.TabIndex = 4;
@@ -82,23 +81,13 @@ namespace BackEnd
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(615, 454);
+            this.btnReport.Location = new System.Drawing.Point(431, 454);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(75, 52);
+            this.btnReport.Size = new System.Drawing.Size(83, 43);
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Create Report";
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // BtnSaveToFile
-            // 
-            this.BtnSaveToFile.Location = new System.Drawing.Point(721, 451);
-            this.BtnSaveToFile.Name = "BtnSaveToFile";
-            this.BtnSaveToFile.Size = new System.Drawing.Size(75, 51);
-            this.BtnSaveToFile.TabIndex = 7;
-            this.BtnSaveToFile.Text = "Save to text file.";
-            this.BtnSaveToFile.UseVisualStyleBackColor = true;
-            this.BtnSaveToFile.Click += new System.EventHandler(this.BtnSaveToFile_Click);
             // 
             // btnClose
             // 
@@ -302,7 +291,6 @@ namespace BackEnd
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.BtnSaveToFile);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnFindDVD);
             this.Controls.Add(this.btnDisplayAll);
@@ -321,7 +309,6 @@ namespace BackEnd
         private System.Windows.Forms.Button btnDisplayAll;
         private System.Windows.Forms.Button btnFindDVD;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button BtnSaveToFile;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

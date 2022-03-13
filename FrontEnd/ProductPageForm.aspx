@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="Products Page "  Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ProductPageForm.aspx.cs" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 52px;
+        }
+    </style>
+</asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -30,9 +36,9 @@
             <td>Title</td>
         </tr>
         <tr>
-            <td>Price</td>
-            <td>Price</td>
-            <td>Price</td>
+            <td class="auto-style1">Price</td>
+            <td class="auto-style1">Price</td>
+            <td class="auto-style1">Price</td>
         </tr>
         <tr>
             <td><button type="button" onclick="IndividualProductsPage.aspx">View Product</button></td>

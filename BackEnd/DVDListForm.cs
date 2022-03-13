@@ -53,7 +53,8 @@ namespace BackEnd
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-
+            DVDReportForm reportform = new DVDReportForm();
+            reportform.Show();
         }
 
         private void BtnSaveToFile_Click(object sender, EventArgs e)
@@ -157,7 +158,7 @@ namespace BackEnd
             {
                 DVDEntryForm entryform = new DVDEntryForm();
                 DVDID = Convert.ToInt32(lstDVDs.SelectedValue);
-                //to be changed
+                //to be changed - DVDID to new form
                 entryform.FindDVD(DVDID);
                 entryform.Show();
             }

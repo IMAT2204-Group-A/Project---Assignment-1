@@ -5,18 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-[Serializable()]
-public class clsDVD : IComparable
+
+public class clsDVD
 {
 
-    protected int dvdid;
-    protected string dvdname;
-    protected string dvddescription;
-    protected DateTime dvddateofrelease;
-    protected int dvdlength;
-    protected decimal dvdprice;
-    protected int supplierid;
-    protected string dvdimage;
+    private int dvdid;
+    private string dvdname;
+    private string dvddescription;
+    private DateTime dvddateofrelease;
+    private int dvdlength;
+    private decimal dvdprice;
+    private int supplierid;
+    private string dvdimage;
 
 
     public int DVDID
@@ -61,7 +61,7 @@ public class clsDVD : IComparable
         get { return dvdimage; }
         set { dvdimage = value; }
     }
-    public string FilmValid(string DVDName,
+    public string DVDValid(string DVDName,
                              string DVDDescription,
                              DateTime DVDDateOfRelease,
                              int DVDLenght,
@@ -70,10 +70,26 @@ public class clsDVD : IComparable
                              string DVDImage)
     {
         string ErrorMessage = "";
+        //DVDName
         if (DVDName.Length == 0)
         {
             ErrorMessage = ErrorMessage + "Name of the movie cannot be empty!";
         }
+        else if (DVDName.Length > 100)
+        {
+            ErrorMessage = ErrorMessage + "Name of the movie cannot be bigger than 100 characters";
+        }
+        //DVDDescription 
+        else if (DVDDescription.Length < 5)
+        {
+            ErrorMessage = ErrorMessage + "Description cannot have less than 5 characters";
+        }
+        else if (DVDDescription.Length > 500)
+        {
+
+        }
+
+
         if (ErrorMessage == "")
         {
             return "";
@@ -82,13 +98,8 @@ public class clsDVD : IComparable
         {
             return "There were the following errors: " + ErrorMessage;
         }
-    }
-    public int CompareTo(object obj)
-    {
-        throw new NotImplementedException();
-    }
 
-    
+    }
     public Int32 Find(Int32 DVDID)
     {
         clsDataConnection dBConnection = new clsDataConnection();

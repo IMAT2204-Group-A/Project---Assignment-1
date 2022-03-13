@@ -14,18 +14,21 @@ namespace ClassLibraryCJMKLtd
         protected Condition condition;
 
 
-        
 
-        public clsDVDCopy(int dvdCopyID, int dvdID, Condition condition)
-        {
-            this.dvdcopyid = dvdCopyID;
-            this.dvdid = dvdID;
-            this.condition = condition;
-        }
         public int DVDCopyID
         {
             get { return dvdcopyid; }
             set { dvdcopyid = value; }
+        }
+        public int DVDID
+        {
+            get { return DVDID; }
+            set { DVDID = value; }
+        }
+        public Condition Condition1
+        {
+            get { return condition; }
+            set { condition = value; }
         }
         public enum Condition
         {
@@ -34,6 +37,21 @@ namespace ClassLibraryCJMKLtd
             good,
             mint
         };
+
+
+        public string Find(string Condition)
+        {
+            clsDataConnection dbConnection = new clsDataConnection();
+            dbConnection.AddParameter("@Condition", Condition);
+            dbConnection.Execute("sproc_tblDVDCopy_FilterByDVDCopyCondition");
+            if (dbConnection.Count == 1)
+            {
+                dvdcopyid = Convert.ToInt32(dbConnection.DataTable.Rows[0]["@DVDCopyID"]);
+                dvdid = Convert.ToInt32(dbConnection.DataTable.Rows[0]["@DVDID"]);
+                Condition = Enum.GetName(typeof(Condition), condition);
+            }
+            return Condition;
+        }
 
 
     }
