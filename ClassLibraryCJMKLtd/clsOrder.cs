@@ -110,7 +110,7 @@ namespace ClassLibraryCJMKLtd
             //stroing a blank message
             string message = "";
             //if the price is bellow 0.01
-            if (price < 0.01m)
+            if (price < 1m)
             {
                 //give this output
                 message = "Not enough dolla";
@@ -146,25 +146,40 @@ namespace ClassLibraryCJMKLtd
             return message;
         }
 
-        //public string Valid(string status, decimal price, DateTime orderDate, int userID)
-        //{
-        //    //stroing a blank message
-        //    string message = "";
-        //    //if the price is bellow 1
-        //    if (status = "")
-        //    {
-        //        //give this output
-        //        message = "Too small";
-        //    }
-        //    //if the price is above 10000
-        //    if (userID > 10000)
-        //    {
-        //        //give this message 
-        //        message = "Too big";
-        //    }
-        //    //returns the message either blank or Not enough dolla, Too much dolla
-        //    return message;
-        //}
+       
+        public string Valid(string testData, decimal price, DateTime orderDate, int userID)
+        {
+            string message = "";
+
+            if (testData.Length < 2)
+            {
+                message = "Status is too short";
+            }
+
+            if (testData.Length > 10)
+            {
+                message = "Status is too long";
+            }
+
+            return message;
+        }
+
+        public string Valid(DateTime orderDate, int userID, decimal price, string status)
+        {
+            string message = "";
+
+            if (orderDate "")
+            {
+                message = "Status is too short";
+            }
+
+            if (orderDate.Length > 10)
+            {
+                message = "Name is too long";
+            }
+
+            return message;
+        }
 
         public List<clsOrder> FilterByUserID(int Format)
         {
@@ -226,6 +241,8 @@ namespace ClassLibraryCJMKLtd
             }
             return mOrderList;
         }
+
+        
 
         //public Boolean Delete()
         //{

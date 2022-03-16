@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BasketPage.aspx" />
-    <Content Include="CancelOrderPage.aspx" />
+    <Content Include="RemoveOrderPage.aspx" />
     <Content Include="CheckoutPage.aspx" />
     <Content Include="ConfirmOrderPage.aspx" />
     <Content Include="Images\Location Image.png" />
@@ -89,12 +89,12 @@
     <Compile Include="BasketPage.aspx.designer.cs">
       <DependentUpon>BasketPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CancelOrderPage.aspx.cs">
-      <DependentUpon>CancelOrderPage.aspx</DependentUpon>
+    <Compile Include="RemoveOrderPage.aspx.cs">
+      <DependentUpon>RemoveOrderPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CancelOrderPage.aspx.designer.cs">
-      <DependentUpon>CancelOrderPage.aspx</DependentUpon>
+    <Compile Include="RemoveOrderPage.aspx.designer.cs">
+      <DependentUpon>RemoveOrderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="CheckoutPage.aspx.cs">
       <DependentUpon>CheckoutPage.aspx</DependentUpon>

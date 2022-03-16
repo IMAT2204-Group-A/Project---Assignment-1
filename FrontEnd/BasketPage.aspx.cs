@@ -76,7 +76,8 @@ namespace FrontEnd
                 Response.Write(MyBasket.Products[Index].SubTotal);
                 Response.Write("</td>");
                 Response.Write("<td>");
-                Response.Write("<a href=\"Remove.aspx?Index=" + Index + "\">Remove</a>");
+                //Response.Write("<a href=\"RemoveOrderPage.aspx?Index=" + Index + "\">Remove</a>");
+                Response.Write("<a href='RemoveOrderPage.aspx'>Remove</a>");
                 Response.Write("</td>");
                 Response.Write("</tr>");
                 Index++;

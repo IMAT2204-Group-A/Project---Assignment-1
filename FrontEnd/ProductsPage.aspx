@@ -28,11 +28,11 @@
         </tr>
         <tr style="align-content: center">
             <td>
-                <asp:Button ID="Button1" runat="server" Text="View Product" OnClick="Button1_Click" /></td>
+<%--                <asp:Button ID="Button1" runat="server" Text="View Product" OnClick="Button1_Click" /></td>--%>
             <td>
-                <asp:Button ID="Button2" runat="server" Text="View Product" OnClick="Button2_Click" /></td>
+<%--                <asp:Button ID="Button2" runat="server" Text="View Product" OnClick="Button2_Click" /></td>--%>
             <td>
-                <asp:Button ID="Button3" runat="server" Text="View Product" OnClick="Button3_Click" /></td>
+<%--                <asp:Button ID="Button3" runat="server" Text="View Product" OnClick="Button3_Click" /></td>--%>
         </tr>
 
     </table>
