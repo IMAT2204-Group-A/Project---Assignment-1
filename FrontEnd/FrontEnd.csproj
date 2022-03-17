@@ -72,11 +72,11 @@
     <Content Include="Images\Logo.png" />
     <Content Include="Images\Shopping Cart.png" />
     <Content Include="Index.aspx" />
-    <Content Include="IndividualProductsPage.aspx" />
-    <Content Include="ProductPageForm.aspx" />
     <Content Include="SyleSheets\StyleSheet.css" />
-    <Content Include="Web.config" />
-    <Content Include="dvdListPage.aspx" />
+    <Content Include=".config" />
+    <Content Include="pageDVDList.aspx" />
+    <Content Include="pageIndividualProduct.aspx" />
+    <Content Include="ProductListExample.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasketPage.aspx.cs">
@@ -93,13 +93,6 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndividualProductsPage.aspx.cs">
-      <DependentUpon>IndividualProductsPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="IndividualProductsPage.aspx.designer.cs">
-      <DependentUpon>IndividualProductsPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,30 +100,44 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="ProductPageForm.aspx.cs">
-      <DependentUpon>ProductPageForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProductPageForm.aspx.designer.cs">
-      <DependentUpon>ProductPageForm.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="dvdListPage.aspx.cs">
-      <DependentUpon>dvdListPage.aspx</DependentUpon>
+    <Compile Include="pageDVDList.aspx.cs">
+      <DependentUpon>pageDVDList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="dvdListPage.aspx.designer.cs">
-      <DependentUpon>dvdListPage.aspx</DependentUpon>
+    <Compile Include="pageDVDList.aspx.designer.cs">
+      <DependentUpon>pageDVDList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageIndividualProduct.aspx.cs">
+      <DependentUpon>pageIndividualProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageIndividualProduct.aspx.designer.cs">
+      <DependentUpon>pageIndividualProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductListExample.aspx.cs">
+      <DependentUpon>ProductListExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductListExample.aspx.designer.cs">
+      <DependentUpon>ProductListExample.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include=".Debug.config">
+      <DependentUpon>.config</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include=".Release.config">
+      <DependentUpon>.config</DependentUpon>
+    </None>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

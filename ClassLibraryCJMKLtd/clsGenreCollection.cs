@@ -17,15 +17,9 @@ public class clsGenreCollection
     }
     public clsGenreCollection()
     {
-        dbConnection.Execute("sproc_tblDVDGenre_SelectAll");
+        dbConnection.Execute("sproc_tblGenre_SelectAll");
     }
-    public Int32 Count
-    {
-        get
-        {
-            return dbConnection.Count;
-        }
-    }
+
   
     public List<clsGenre> GenresList
     {
@@ -44,14 +38,27 @@ public class clsGenreCollection
             return mAllGenres;
         }
     }
-
+    public Int32 Count
+    {
+        get
+        {
+            return dbConnection.Count;
+        }
+    }
     public void FilterByGenreName(string GenreName)
     {
         dbConnection = new clsDataConnection();
         dbConnection.AddParameter("@GenreName", GenreName);
-        dbConnection.Execute("sproc_tblGenre_FilterByGenreNameByName");
+        dbConnection.Execute("sproc_tblGenre_FilterByGenreName");
     }
 
+    public void Update()
+    {
+        clsDataConnection ExistingDVDVD = new clsDataConnection();
+        ExistingDVDVD.AddParameter("@GenreID", mThisGenre.GenreID);
+        ExistingDVDVD.AddParameter("@GenreName", mThisGenre.GenreName);
+        ExistingDVDVD.Execute("sproc_tblGenre_Update");
+    }
 
     public Int32 Add()
     {
@@ -76,8 +83,6 @@ public class clsGenreCollection
             return false;
         }
     }
-
-
 }
     
 

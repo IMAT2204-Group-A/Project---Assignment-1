@@ -64,10 +64,8 @@ public class clsDVD
     public string DVDValid(string DVDName,
                              string DVDDescription,
                              DateTime DVDDateOfRelease,
-                             int DVDLenght,
-                             decimal DVDPrice,
-                             Int32 SupplierID,
-                             string DVDImage)
+                             int DVDLength,
+                             decimal DVDPrice)
     {
         string ErrorMessage = "";
         //DVDName
@@ -77,19 +75,39 @@ public class clsDVD
         }
         else if (DVDName.Length > 100)
         {
-            ErrorMessage = ErrorMessage + "Name of the movie cannot be bigger than 100 characters";
+            ErrorMessage = ErrorMessage + "Name of the movie cannot be bigger than 100 characters!";
         }
         //DVDDescription 
         else if (DVDDescription.Length < 5)
         {
-            ErrorMessage = ErrorMessage + "Description cannot have less than 5 characters";
+            ErrorMessage = ErrorMessage + "Description cannot have less than 5 characters!";
         }
         else if (DVDDescription.Length > 500)
         {
-
+            ErrorMessage = ErrorMessage + "Description cannot be bigger than 500 characters!";
         }
-
-
+        /*
+        else if (DVDDateOfRelease <= (1500 - 01 - 01);
+        {
+            
+        }
+        */
+        else if (DVDPrice < 1)
+        {
+            ErrorMessage = ErrorMessage + "The Price cannot be less than £1";
+        }
+        else if (DVDPrice > 5000)
+        {
+            ErrorMessage = ErrorMessage + "The Price cannot exceed £5000";
+        }
+        else if (DVDLength < 10)
+        {
+            ErrorMessage = ErrorMessage + "The length cannot be lower than 10Minutes";
+        }
+        else if (DVDLength > 650)
+        {
+            ErrorMessage = ErrorMessage + "The Length of the DVD Cannot exceed 650Minutes";
+        }
         if (ErrorMessage == "")
         {
             return "";
@@ -100,24 +118,30 @@ public class clsDVD
         }
 
     }
-    public Int32 Find(Int32 DVDID)
+    public bool Find(Int32 DVDID)
     {
         clsDataConnection dBConnection = new clsDataConnection();
         dBConnection.AddParameter("@DVDID", DVDID);
         dBConnection.Execute("sproc_tblDVD_FilterByDVDID");
         if (dBConnection.Count == 1)
         {
-            dvdid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@DVDID"]);
-            dvdname = Convert.ToString(dBConnection.DataTable.Rows[0]["@DVDName"]);
-            dvddateofrelease = Convert.ToDateTime(dBConnection.DataTable.Rows[0]["@DVDDateOfRelease"]);
-            dvdlength = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@DVDLenght"]);
-            dvdprice = Convert.ToDecimal(dBConnection.DataTable.Rows[0]["@DVDPrice"]);
-            supplierid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["@SupplierID"]);
-            dvdimage = Convert.ToString(dBConnection.DataTable.Rows[0]["@DVDImage"]);
+            dvdid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["DVDID"]);
+            dvdname = Convert.ToString(dBConnection.DataTable.Rows[0]["DVDName"]);
+            dvddescription = Convert.ToString(dBConnection.DataTable.Rows[0]["DVDDescription"]);
+            dvddateofrelease = Convert.ToDateTime(dBConnection.DataTable.Rows[0]["DVDDateOfRelease"]);
+            dvdlength = Convert.ToInt32(dBConnection.DataTable.Rows[0]["DVDLength"]);
+            dvdprice = Convert.ToDecimal(dBConnection.DataTable.Rows[0]["DVDPrice"]);
+            supplierid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["SupplierID"]);
+            dvdimage = Convert.ToString(dBConnection.DataTable.Rows[0]["DVDImage"]);
+            return true;
         }
-        return DVDID;
+        else
+        {
+            return false;
+        }
 
     }
+
 
 
 }

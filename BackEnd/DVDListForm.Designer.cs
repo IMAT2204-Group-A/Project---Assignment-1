@@ -149,18 +149,16 @@ namespace BackEnd
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cbGenreFilter
             // 
-            this.cbGenreFilter.DataSource = this.tblGenreBindingSource;
-            this.cbGenreFilter.DisplayMember = "GenreName";
             this.cbGenreFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGenreFilter.FormattingEnabled = true;
             this.cbGenreFilter.Location = new System.Drawing.Point(629, 53);
             this.cbGenreFilter.Name = "cbGenreFilter";
             this.cbGenreFilter.Size = new System.Drawing.Size(121, 26);
             this.cbGenreFilter.TabIndex = 14;
-            this.cbGenreFilter.ValueMember = "GenreName";
             this.cbGenreFilter.SelectedIndexChanged += new System.EventHandler(this.cbGenreFilter_SelectedIndexChanged);
             // 
             // tblGenreBindingSource

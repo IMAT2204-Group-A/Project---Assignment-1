@@ -33,6 +33,7 @@ namespace BackEnd
             this.btnViewStock = new System.Windows.Forms.Button();
             this.btnGenre = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDVDCopyOpen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@ namespace BackEnd
             // 
             // btnGenre
             // 
-            this.btnGenre.Location = new System.Drawing.Point(60, 146);
+            this.btnGenre.Location = new System.Drawing.Point(60, 225);
             this.btnGenre.Name = "btnGenre";
             this.btnGenre.Size = new System.Drawing.Size(118, 73);
             this.btnGenre.TabIndex = 2;
@@ -76,11 +77,22 @@ namespace BackEnd
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // btnDVDCopyOpen
+            // 
+            this.btnDVDCopyOpen.Location = new System.Drawing.Point(60, 146);
+            this.btnDVDCopyOpen.Name = "btnDVDCopyOpen";
+            this.btnDVDCopyOpen.Size = new System.Drawing.Size(118, 73);
+            this.btnDVDCopyOpen.TabIndex = 12;
+            this.btnDVDCopyOpen.Text = "DVD Copies";
+            this.btnDVDCopyOpen.UseVisualStyleBackColor = true;
+            this.btnDVDCopyOpen.Click += new System.EventHandler(this.btnDVDCopyOpen_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 536);
+            this.Controls.Add(this.btnDVDCopyOpen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.btnViewStock);
@@ -99,5 +111,6 @@ namespace BackEnd
         private System.Windows.Forms.Button btnViewStock;
         private System.Windows.Forms.Button btnGenre;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnDVDCopyOpen;
     }
 }

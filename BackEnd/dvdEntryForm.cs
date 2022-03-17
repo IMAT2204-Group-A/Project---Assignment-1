@@ -14,15 +14,26 @@ namespace BackEnd
     public partial class DVDEntryForm : Form
     {
         Int32 DVDID;
-        public DVDEntryForm()
+
+        public DVDEntryForm(int id)
         {
+            DVDID = id;
+
+
             InitializeComponent();
+
+
         }
 
         private void dvdEntryForm_Load(object sender, EventArgs e)
         {
 
-
+            //this.tblGenreTableAdapter.Fill(this.dVDBookDataSet.tblGenre);
+            if (DVDID != -1)
+            {
+                ShowDVDs(DVDID);
+            }
+            ShowGenres();
 
         }
 
@@ -34,15 +45,14 @@ namespace BackEnd
                                              txtDVDDescription.Text,
                                              Convert.ToDateTime(txtDVDDateOfRelease.Text),
                                              Convert.ToInt32(txtDVDLenght.Text),
-                                            Convert.ToDecimal(txtDVDPrice.Text),
-                                            Convert.ToInt32(txtSupplierID.Text),
-                                             txtDVDImage.Text);
+                                             Convert.ToDecimal(txtDVDPrice.Text));
             if (ErrorMessage == "")
             {
+
                 clsDVDCollection DVDShop = new clsDVDCollection();
                 if (DVDID == -1)
                 {
-                    DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID);
+                    // DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID.Text);
                     DVDShop.ThisDVD.DVDName = txtDVDName.Text;
                     DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
                     DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(txtDVDDateOfRelease.Text);
@@ -50,20 +60,41 @@ namespace BackEnd
                     DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
                     DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
                     DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);
-                    DVDShop.Add();
+
+                    try
+                    {
+                        clsDataConnection con = new clsDataConnection();
+                        string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
+                        if (filename == null)
+                        {
+                            MessageBox.Show("Please select a valid image.");
+                        }
+                        else
+                        {
+                            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 17)) + "FrontEnd";
+                            System.IO.File.Copy(openFileDialog1.FileName, path + "\\Images\\" + filename);
+                            DVDShop.Add();
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message,  "File Already Exists");
+                    }
                 }
                 else
                 {
-                    DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID);
+                    // DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID.Text);
                     DVDShop.ThisDVD.DVDName = txtDVDName.Text;
                     DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
                     DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(txtDVDDateOfRelease.Text);
                     DVDShop.ThisDVD.DVDLength = Convert.ToInt32(txtDVDLenght.Text);
+                    DVDShop.ThisDVD.DVDDescription = Convert.ToString(txtDVDDescription);   
                     DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
                     DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
-                    DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);
+                    DVDShop.ThisDVD.DVDImage = Convert.ToString("\\Images\\" + txtDVDImage.Text);
                     DVDShop.Update();
                 }
+
                 this.Close();
                 DVDListForm dvdList = new DVDListForm();
                 dvdList.Show();
@@ -81,12 +112,9 @@ namespace BackEnd
         public void FindDVD(int DVDID)
         {
 
+            // = "DVDID =" + Convert.ToString(DVDID);
         }
-
-
-
-
-        void ShowDVDs()
+        void ShowDVDs(Int32 DVDID)
         {
             clsDVDCollection MyDVDShop = new clsDVDCollection();
             MyDVDShop.ThisDVD.Find(DVDID);
@@ -96,7 +124,8 @@ namespace BackEnd
             txtDVDLenght.Text = Convert.ToString(MyDVDShop.ThisDVD.DVDLength);
             txtDVDPrice.Text = Convert.ToString(MyDVDShop.ThisDVD.DVDPrice);
             txtSupplierID.Text = Convert.ToString(MyDVDShop.ThisDVD.SupplierID);
-            txtDVDImage.Text = MyDVDShop.ThisDVD.DVDImage;
+            string fileName = MyDVDShop.ThisDVD.DVDImage.Split('\\')[2];
+            txtDVDImage.Text = fileName;
         }
 
         Int32 ShowGenres()
@@ -109,7 +138,7 @@ namespace BackEnd
             {
                 GenreID = Convert.ToString(Genres.GenresList[Index].GenreID);
                 GenreName = Genres.GenresList[Index].GenreName;
-                ListItem newGenre = new ListItem(GenreID, GenreName);
+                ListItem newGenre = new ListItem(GenreName);
                 lstGenreList.Items.Add(newGenre);
                 Index++;
 
@@ -120,6 +149,33 @@ namespace BackEnd
         private void lstGenreList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "Select Image to be uploaded";
+            openFileDialog1.Filter = "Image Only(*.jpg; *.jpeg; *.bmp; *.png;)|*.jpg; *.jpeg; *.bmp; *.png";
+            openFileDialog1.FilterIndex = 1;
+            try
+            {
+                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (openFileDialog1.CheckFileExists)
+                    {
+                        string path = System.IO.Path.GetFileName(openFileDialog1.FileName);
+                        txtDVDImage.Text = path;
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Upload Image.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

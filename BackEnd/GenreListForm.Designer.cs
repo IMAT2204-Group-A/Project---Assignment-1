@@ -37,24 +37,28 @@ namespace BackEnd
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.txtGenreNameFilter = new System.Windows.Forms.TextBox();
-            this.btnFilter = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstGenres
             // 
+            this.lstGenres.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstGenres.FormattingEnabled = true;
-            this.lstGenres.Location = new System.Drawing.Point(12, 75);
+            this.lstGenres.ItemHeight = 25;
+            this.lstGenres.Location = new System.Drawing.Point(37, 80);
             this.lstGenres.Name = "lstGenres";
-            this.lstGenres.Size = new System.Drawing.Size(640, 212);
+            this.lstGenres.Size = new System.Drawing.Size(640, 204);
             this.lstGenres.TabIndex = 0;
+            this.lstGenres.SelectedIndexChanged += new System.EventHandler(this.lstGenres_SelectedIndexChanged);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Location = new System.Drawing.Point(31, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(181, 35);
             this.lblTitle.TabIndex = 1;
@@ -63,7 +67,7 @@ namespace BackEnd
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(229, 324);
+            this.lblError.Location = new System.Drawing.Point(254, 321);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 2;
@@ -71,7 +75,7 @@ namespace BackEnd
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BackEnd.Properties.Resources.Logo_Smaller;
-            this.pictureBox1.Location = new System.Drawing.Point(199, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(703, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -80,7 +84,7 @@ namespace BackEnd
             // 
             // btnDisplayAll
             // 
-            this.btnDisplayAll.Location = new System.Drawing.Point(12, 293);
+            this.btnDisplayAll.Location = new System.Drawing.Point(37, 290);
             this.btnDisplayAll.Name = "btnDisplayAll";
             this.btnDisplayAll.Size = new System.Drawing.Size(83, 44);
             this.btnDisplayAll.TabIndex = 12;
@@ -118,30 +122,42 @@ namespace BackEnd
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txtGenreNameFilter
+            // label1
             // 
-            this.txtGenreNameFilter.Location = new System.Drawing.Point(498, 49);
-            this.txtGenreNameFilter.Name = "txtGenreNameFilter";
-            this.txtGenreNameFilter.Size = new System.Drawing.Size(100, 20);
-            this.txtGenreNameFilter.TabIndex = 26;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Genre ID";
             // 
-            // btnFilter
+            // label2
             // 
-            this.btnFilter.Location = new System.Drawing.Point(604, 49);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnFilter.TabIndex = 27;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(115, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Genre Name";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(670, 386);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(83, 44);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // GenreListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.txtGenreNameFilter);
+            this.ClientSize = new System.Drawing.Size(765, 442);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -169,7 +185,8 @@ namespace BackEnd
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox txtGenreNameFilter;
-        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClose;
     }
 }

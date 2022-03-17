@@ -53,6 +53,7 @@ namespace BackEnd
             this.lstDVDCopy.Name = "lstDVDCopy";
             this.lstDVDCopy.Size = new System.Drawing.Size(391, 229);
             this.lstDVDCopy.TabIndex = 0;
+            this.lstDVDCopy.SelectedIndexChanged += new System.EventHandler(this.lstDVDCopy_SelectedIndexChanged);
             // 
             // label1
             // 

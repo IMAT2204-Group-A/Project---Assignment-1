@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -96,7 +96,7 @@ public class clsDVDCollection
         {
             clsDataConnection MyDatabase = new clsDataConnection();
             MyDatabase.AddParameter("@DVDID", mThisDVD.DVDID);
-            MyDatabase.Execute("sproc_tblFilm_Delete");
+            MyDatabase.Execute("sproc_tblDVD_Delete");
             return true;
         }
         catch

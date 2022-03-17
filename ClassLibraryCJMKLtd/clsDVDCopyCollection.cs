@@ -17,13 +17,10 @@ public class clsDVDCopyCollection
         set { mThisDVDCopy = value; }
     }
 
-    
-   public Int32 Count
+
+    public clsDVDCopyCollection()
     {
-        get
-        {
-            return dbConnection.Count;
-        }
+        dbConnection.Execute("sproc_tblDVDCopy_SelectAll");
     }
 
 
@@ -64,7 +61,17 @@ public class clsDVDCopyCollection
             return mDVDCopyList;
         }
     }
- 
+
+
+
+    public Int32 Count
+    {
+        get
+        {
+            return dbConnection.Count;
+        }
+    }
+
 
     // Methods, Add/Delete
     public int Add()

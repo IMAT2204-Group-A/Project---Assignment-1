@@ -22,8 +22,8 @@ namespace ClassLibraryCJMKLtd
         }
         public int DVDID
         {
-            get { return DVDID; }
-            set { DVDID = value; }
+            get { return dvdid; }
+            set { dvdid = value; }
         }
         public Condition Condition1
         {
@@ -39,18 +39,48 @@ namespace ClassLibraryCJMKLtd
         };
 
 
-        public string Find(string Condition)
+        
+
+
+
+
+
+        public bool Find(int DVDCopyID)
         {
-            clsDataConnection dbConnection = new clsDataConnection();
-            dbConnection.AddParameter("@Condition", Condition);
-            dbConnection.Execute("sproc_tblDVDCopy_FilterByDVDCopyCondition");
-            if (dbConnection.Count == 1)
+            clsDVDCopy newDVDCopy = new clsDVDCopy();
+            clsDataConnection dBConnection = new clsDataConnection();
+            dBConnection.AddParameter("@DVDCopyID", DVDCopyID);
+            dBConnection.Execute("sproc_tblDVDCopy_FilterByDVDCopyID");
+            if (dBConnection.Count == 1)
             {
-                dvdcopyid = Convert.ToInt32(dbConnection.DataTable.Rows[0]["@DVDCopyID"]);
-                dvdid = Convert.ToInt32(dbConnection.DataTable.Rows[0]["@DVDID"]);
-                Condition = Enum.GetName(typeof(Condition), condition);
+                dvdcopyid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["DVDCopyID"]);
+                dvdid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["DVDID"]);
+                string condition_name = Convert.ToString(dBConnection.DataTable.Rows[0]["Condition"]);
+                if (condition_name == Convert.ToString(clsDVDCopy.Condition.poor))
+                {
+                    newDVDCopy.Condition1 = clsDVDCopy.Condition.poor;
+                }
+
+                else if (condition_name == Convert.ToString(clsDVDCopy.Condition.fair))
+                {
+                    newDVDCopy.Condition1 = clsDVDCopy.Condition.fair;
+                }
+
+                else if (condition_name == Convert.ToString(clsDVDCopy.Condition.good))
+                {
+                    newDVDCopy.Condition1 = clsDVDCopy.Condition.fair;
+                }
+                else if (condition_name == Convert.ToString(clsDVDCopy.Condition.mint))
+                {
+                    newDVDCopy.Condition1 = clsDVDCopy.Condition.mint;
+                }
+                return true;
             }
-            return Condition;
+            else
+            {
+                return false;
+            }
+
         }
 
 

@@ -26,7 +26,7 @@ namespace BackEnd.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"I:\\DMU Course\\Year 2\\Project" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\DMU Course\\Year 2\\Project" +
             " management - Jai\\Project\\Project - Assignment 1\\App_Data\\DVDBook.mdf\";Integrate" +
             "d Security=True;Connect Timeout=30")]
         public string DVDBookConnectionString {

@@ -10,16 +10,20 @@ namespace ClassLibraryCJMKLtd
     {
         protected int dvdid;
         protected int genreid;
+        
 
-        public clsDVDGenre(int dvdID, int genreID)
-        {
-            this.dvdid = dvdID;
-            this.genreid = genreID;
-        }
+        
+
         public int DVDID
         {
             get { return dvdid; }
             set { dvdid = value; }
+        }
+
+        public int GenreID
+        {
+            get { return genreid; }
+            set { genreid = value; }
         }
     }
 }

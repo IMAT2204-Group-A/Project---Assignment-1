@@ -28,14 +28,20 @@ namespace BackEnd
 
         private void btnViewStock_Click(object sender, EventArgs e)
         {
-            this.Hide();
             DVDListForm dvdlist = new DVDListForm();
             dvdlist.Show();
         }
 
         private void btnGenre_Click(object sender, EventArgs e)
         {
+            GenreListForm genreform = new GenreListForm();
+            genreform.Show();
+        }
 
+        private void btnDVDCopyOpen_Click(object sender, EventArgs e)
+        {
+            DVDCopyForm copyform = new DVDCopyForm();
+            copyform.Show();
         }
     }
 }

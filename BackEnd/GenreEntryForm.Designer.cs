@@ -57,9 +57,9 @@ namespace BackEnd
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "GenreID";
+            this.label2.Text = "Genre ID";
             // 
             // txtGenreID
             // 
@@ -72,7 +72,7 @@ namespace BackEnd
             // txtGenreName
             // 
             this.txtGenreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreName.Location = new System.Drawing.Point(124, 177);
+            this.txtGenreName.Location = new System.Drawing.Point(124, 174);
             this.txtGenreName.Name = "txtGenreName";
             this.txtGenreName.Size = new System.Drawing.Size(100, 26);
             this.txtGenreName.TabIndex = 3;
@@ -92,9 +92,9 @@ namespace BackEnd
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "GenreName";
+            this.label3.Text = "Genre";
             // 
             // btnSave
             // 

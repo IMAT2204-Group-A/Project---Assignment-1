@@ -13,15 +13,16 @@ using ClassLibraryCJMKLtd;
 
 namespace BackEnd
 {
-   
+
 
     public partial class DVDListForm : Form
     {
+
         public DVDListForm()
         {
             InitializeComponent();
-            DisplayDVDs("");
-            cbGenreFilter.ResetText();
+            
+
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -46,8 +47,9 @@ namespace BackEnd
 
         private void DVDList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dVDBookDataSet.tblGenre' table. You can move, or remove it, as needed.
-            this.tblGenreTableAdapter.Fill(this.dVDBookDataSet.tblGenre);
+            DisplayDVDs("");
+            GenresDisplay();
+            cbGenreFilter.ResetText();
 
         }
 
@@ -91,10 +93,11 @@ namespace BackEnd
 
         Int32 DisplayDVDs(string GenreFilter)
         {
-            
 
+            List<KeyValuePair<int, string>> ListItems = new List<KeyValuePair<int, string>>();
             clsDVDCollection DVDShop = new clsDVDCollection();
             Int32 RecordCount;
+            Int32 DVDID;
             string DVDName;
             string DVDDescription;
             DateTime DVDDateOfRelease;
@@ -103,7 +106,7 @@ namespace BackEnd
             Int32 SupplierID;
             string DVDImage;
             Int32 Index = 0;
-            lstDVDs.Items.Clear();
+            lstDVDs.DataSource = null;
 
             clsGenreCollection genre = new clsGenreCollection();
             genre.FilterByGenreName(GenreFilter);
@@ -122,6 +125,7 @@ namespace BackEnd
             RecordCount = DVDShop.Count;
             while (Index < RecordCount)
             {
+                DVDID = Convert.ToInt32(DVDShop.DVDs[Index].DVDID);
                 DVDName = Convert.ToString(DVDShop.DVDs[Index].DVDName);
                 DVDDescription = Convert.ToString(DVDShop.DVDs[Index].DVDDescription);
                 DVDDateOfRelease = Convert.ToDateTime(DVDShop.DVDs[Index].DVDDateOfRelease);
@@ -129,21 +133,49 @@ namespace BackEnd
                 DVDPrice = Convert.ToDecimal(DVDShop.DVDs[Index].DVDPrice);
                 SupplierID = Convert.ToInt32(DVDShop.DVDs[Index].SupplierID);
                 DVDImage = Convert.ToString(DVDShop.DVDs[Index].DVDImage);
-                ListItem NewItem = new ListItem(DVDName + "  | " + DVDDescription + " |  " + DVDDateOfRelease + " |  " + DVDLength + " |  " + DVDPrice + "  | " + SupplierID + "  | " + DVDImage);
-                lstDVDs.Items.Add(NewItem);
+
+                ListItems.Add(new KeyValuePair<int, string>(DVDID, DVDID + " " + DVDName + "  | "  + DVDDateOfRelease + " |  " + DVDLength + " |  " + DVDPrice + "  | " + SupplierID + "  | " + DVDImage));
 
                 Index++;
             }
+            lstDVDs.DataSource = ListItems;
+            lstDVDs.ValueMember = "Key";
+            lstDVDs.DisplayMember = "Value";
             return RecordCount;
+
+        }
+        Int32 GenresDisplay()
+        {
+            clsGenreCollection MyDVDShop = new clsGenreCollection();
+            Int32 RecordCount;
+            Int32 GenreID;
+            string GenreName;
+            Int32 Index = 0;
+            RecordCount = MyDVDShop.Count;
+            while (Index < RecordCount)
+            {
+                GenreID = Convert.ToInt32(MyDVDShop.GenresList[Index].GenreID);
+                GenreName = Convert.ToString(MyDVDShop.GenresList[Index].GenreName);
+                ListItem NewItem = new ListItem(GenreName);
+                cbGenreFilter.Items.Add(NewItem);
+                Index++;
+            }
+            return RecordCount;
+
         }
 
+
+
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
-            DVDEntryForm NewDVD = new DVDEntryForm();
+
+            DVDEntryForm NewDVD = new DVDEntryForm(-1);
             NewDVD.Show();
-            
+
             this.Close();
+
+
         }
 
         private void cbGenreFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,18 +185,46 @@ namespace BackEnd
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Int32 DVDID;
+            
             if (lstDVDs.SelectedIndex != -1)
             {
-                DVDEntryForm entryform = new DVDEntryForm();
-                DVDID = Convert.ToInt32(lstDVDs.SelectedValue);
-                //to be changed - DVDID to new form
-                entryform.FindDVD(DVDID);
+                DVDEntryForm entryform = new DVDEntryForm(Convert.ToInt32(lstDVDs.SelectedValue));
                 entryform.Show();
+
+                this.Close();
+                //to be changed - DVDID to new form
+
             }
             else
             {
                 lblError.Text = "Please select an item to edit!";
+            }
+        }
+
+
+
+        //Before Deleting DVD, DVDCopy Used by the DVDID in this list.
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            clsDVDCollection dvd = new clsDVDCollection();
+
+            Int32 DVDID;
+            Boolean Found;
+            DialogResult Response;
+            if (lstDVDs.SelectedIndex != -1)
+            {
+                DVDID = Convert.ToInt32(lstDVDs.SelectedValue);
+
+                Found = dvd.ThisDVD.Find(DVDID);
+                Response = MessageBox.Show("Are you sure you want to remove this record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (Response == DialogResult.Yes)
+                {
+                    if (Found)
+                    {
+                        dvd.Delete();
+                        DisplayDVDs("");
+                    }
+                }
             }
         }
     }
