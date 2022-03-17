@@ -477,7 +477,7 @@ namespace TDDUnitTest
             int testData = -111;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -494,7 +494,7 @@ namespace TDDUnitTest
             int testData = 0;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -511,7 +511,7 @@ namespace TDDUnitTest
             int testData = 1;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -528,7 +528,7 @@ namespace TDDUnitTest
             int testData = 2;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -545,7 +545,7 @@ namespace TDDUnitTest
             int testData = 99;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -562,7 +562,7 @@ namespace TDDUnitTest
             int testData = 100;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -579,7 +579,7 @@ namespace TDDUnitTest
             int testData = 101;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -596,7 +596,7 @@ namespace TDDUnitTest
             int testData = 50;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
@@ -613,7 +613,7 @@ namespace TDDUnitTest
             int testData = 101111;
             //setting the orderid
             int orderID = 1;
-            //setting the quantity
+            //setting the dvdid
             int dvdID = 1;
             //getting the validation for the message
             string message = aDVDShop.ValidThree(testData, orderID, dvdID);
