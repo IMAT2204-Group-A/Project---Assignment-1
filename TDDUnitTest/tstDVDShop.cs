@@ -16,6 +16,51 @@ namespace TDDUnitTest
         }
 
         [TestMethod]
+        public void InstanceTwoOk()
+        {
+            //create an instance of the dvd shop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            Assert.IsNotNull(aDVDShop);
+        }
+
+        [TestMethod]
+        //checking that the price is ok
+        public void OrderIDOk()
+        {
+            //create an instance of the dvd shop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //setting the test data to one
+            int testData = 1;
+            aDVDShop.OrderID = testData;
+            Assert.AreEqual(aDVDShop.OrderID, testData);
+        }
+
+        [TestMethod]
+        //checking that the price is ok
+        public void DVDIDOk()
+        {
+            //create an instance of the dvd shop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //setting the test data to one
+            int testData = 1;
+            aDVDShop.DVDID = testData;
+            Assert.AreEqual(aDVDShop.DVDID, testData);
+        }
+
+        [TestMethod]
+        //checking that the price is ok
+        public void QuanitiyOk()
+        {
+            //create an instance of the dvd shop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //setting the test data to one
+            int testData = 1;
+            aDVDShop.Quantity = testData;
+            Assert.AreEqual(aDVDShop.Quantity, testData);
+        }
+
+
+        [TestMethod]
         //checking that the price is ok
         public void PriceOk()
         {
@@ -73,6 +118,15 @@ namespace TDDUnitTest
         }
 
         [TestMethod]
+        public void FindTwoOk()
+        {
+            clsOrderLine aDVDShop = new clsOrderLine();
+            int id = 1;
+            bool isFound = aDVDShop.Find(id);
+            Assert.IsTrue(isFound);
+        }
+
+        [TestMethod]
         public void ValidOk()
         {
             //instance of the bookshop
@@ -91,6 +145,481 @@ namespace TDDUnitTest
             Assert.AreEqual(message, "");
         }
 
+        [TestMethod]
+        public void ValidTwoOk()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //setting the price
+            int orderID = 1;
+            //setting the uers id
+            int dvdID = 1;
+            //setting the status
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(orderID, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void OrderIDMin()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 1
+            int testData = 1;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void OrderIDMinMinusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 0
+            int testData = 0;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "orderID is too short");
+        }
+
+        [TestMethod]
+        public void OrderIDExtremeMin()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data -11
+            int testData = -11;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "orderID is too short");
+        }
+
+        [TestMethod]
+        public void OrderIDMinPlusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 2
+            int testData = 2;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void OrderIDMaxMinusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 9999
+            int testData = 9999;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void OrderIDMax()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 10000
+            int testData = 10000;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void OrderIDMaxPlusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 10001
+            int testData = 10001;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "orderID is too long");
+        }
+
+        [TestMethod]
+        public void OrderIDMid()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 5000
+            int testData = 5000; 
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void OrderIDExtremeMax()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 500000
+            int testData = 500000;
+            //setting the dvdid
+            int dvdID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.Valid(testData, dvdID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "orderID is too long");
+        }
+
+        [TestMethod]
+        public void DVDIDExtremeMin()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data -2
+            int testData = -2;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "dvdID is too short");
+        }
+
+        [TestMethod]
+        public void DVDIDMinMinusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 0
+            int testData = 0;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "dvdID is too short");
+        }
+
+        [TestMethod]
+        public void DVDIDMin()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 1
+            int testData = 1;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void DVDIDMinPlusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 2
+            int testData = 2;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void DVDIDMaxMinusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 9999
+            int testData = 9999;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void DVDIDMax()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 10000
+            int testData = 10000;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void DVDIDMaxPlusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 10001
+            int testData = 10001;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "dvdID is too long");
+        }
+
+        [TestMethod]
+        public void DVDIDMid()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 5000
+            int testData = 5000;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void DVDIDExtremeMax()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 1000044
+            int testData = 1000044;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int quantity = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidTwo(testData, orderID, quantity);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "dvdID is too long");
+        }
+
+        [TestMethod]
+        public void QuantityExtremeMin()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data -111
+            int testData = -111;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "quantity is too little");
+        }
+
+        [TestMethod]
+        public void QuantityMinMinusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 0
+            int testData = 0;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "quantity is too little");
+        }
+
+        [TestMethod]
+        public void QuantityMin()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 1
+            int testData = 1;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void QuantityMinPlusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 2
+            int testData = 2;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void QuantityMaxMinusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 99
+            int testData = 99;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void QuantityMax()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 100
+            int testData = 100;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void QuantityMaxPlusOne()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 101
+            int testData = 101;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "quantity is too much");
+        }
+
+        [TestMethod]
+        public void QuantityMid()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 50
+            int testData = 50;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "");
+        }
+
+        [TestMethod]
+        public void QuantityExtremeMax()
+        {
+            //instance of the bookshop
+            clsOrderLine aDVDShop = new clsOrderLine();
+            //testing the data 101111
+            int testData = 101111;
+            //setting the orderid
+            int orderID = 1;
+            //setting the quantity
+            int dvdID = 1;
+            //getting the validation for the message
+            string message = aDVDShop.ValidThree(testData, orderID, dvdID);
+            //getting the message from the class and comparing it with the validation
+            Assert.AreEqual(message, "quantity is too much");
+        }
         [TestMethod]
         public void PriceExtremeMin()
         {

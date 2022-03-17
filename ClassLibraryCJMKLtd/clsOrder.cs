@@ -63,15 +63,9 @@ namespace ClassLibraryCJMKLtd
 
         public void ProcessBasket(clsBasket ShoppingBasket)
         {
-            ///at this point all the data has been captured by the presentation layer
-            ///this is the stage where all of the data is passed to the data layer via the two stored procedures like so
-            ///
-
-            //first we add the order to the database using data from the cart's private data member s
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //pass the data as parameters to the data layer
-            //DB.AddParameter("@Price", ShoppingBasket.Price);
 
             DB.AddParameter("@OrderDate", DateTime.Now.Date);
             DB.AddParameter("@UserId", ShoppingBasket.UserID);
@@ -83,7 +77,6 @@ namespace ClassLibraryCJMKLtd
             Int32 NewOrderNo;
             NewOrderNo = DB.Execute("sproc_tblOrder_Insert");
 
-            //now we need to loop through all the products adding them to the order line table
             Int32 Index = 0;
             Int32 Count = ShoppingBasket.Products.Count;
             while (Index < Count)
@@ -99,7 +92,6 @@ namespace ClassLibraryCJMKLtd
             }
 
         }
-
         public bool Find(int id)
         {
             return true;
@@ -145,8 +137,6 @@ namespace ClassLibraryCJMKLtd
             //returns the message either blank or Not enough dolla, Too much dolla
             return message;
         }
-
-       
         public string Valid(string testData, decimal price, DateTime orderDate, int userID)
         {
             string message = "";
@@ -164,22 +154,22 @@ namespace ClassLibraryCJMKLtd
             return message;
         }
 
-        public string Valid(DateTime orderDate, int userID, decimal price, string status)
-        {
-            string message = "";
+        //public string Valid(DateTime orderDate, int userID, decimal price, string status)
+        //{
+        //    string message = "";
 
-            if (orderDate "")
-            {
-                message = "Status is too short";
-            }
+        //    if (orderDate "")
+        //    {
+        //        message = "Status is too short";
+        //    }
 
-            if (orderDate.Length > 10)
-            {
-                message = "Name is too long";
-            }
+        //    if (orderDate.Length > 10)
+        //    {
+        //        message = "Name is too long";
+        //    }
 
-            return message;
-        }
+        //    return message;
+        //}
 
         public List<clsOrder> FilterByUserID(int Format)
         {
@@ -241,29 +231,5 @@ namespace ClassLibraryCJMKLtd
             }
             return mOrderList;
         }
-
-        
-
-        //public Boolean Delete()
-        //{
-        //    //this public function provides the functionality for the delete method
-
-        //    try//try to delete the record
-        //    {
-        //        //create an instance of the data connection class called MyDatabase
-        //        clsDataConnection MyDatabase = new clsDataConnection();
-        //        //add the VideoGameNo parameter passes to this function to the list of parameters to use in the database
-        //        MyDatabase.AddParameter("@OrderID", mOrderId.OrderId);
-        //        //execute the stored procedure in the database
-        //        MyDatabase.Execute("sproc_tblOrder_Delete");
-        //        //set the return value for the function
-        //        return true;
-        //    }
-
-        //    catch//if the code above failed, do this
-        //    {
-        //        //report back that there was an error
-        //        return false;
-        //    }
     }
 }
