@@ -15,15 +15,12 @@ namespace FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //upon loading the page you need to read in the cart from the session object
-            //MyBasket = (clsBasket)Session["MyBasket"];
             //display the cart contents
             DisplayBasket();
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
         {
-            //you must also save the cart every time the unload event takes place
             Session["MyBasket"] = MyBasket;
         }
 
@@ -76,8 +73,7 @@ namespace FrontEnd
                 Response.Write(MyBasket.Products[Index].SubTotal);
                 Response.Write("</td>");
                 Response.Write("<td>");
-                //Response.Write("<a href=\"RemoveOrderPage.aspx?Index=" + Index + "\">Remove</a>");
-                Response.Write("<a href='RemoveOrderPage.aspx'>Remove</a>");
+                Response.Write("<a href=\"RemoveOrderPage.aspx?Index=" + Index + "\">Remove</a>");
                 Response.Write("</td>");
                 Response.Write("</tr>");
                 Index++;

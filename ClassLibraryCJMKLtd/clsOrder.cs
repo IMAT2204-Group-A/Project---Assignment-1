@@ -154,22 +154,6 @@ namespace ClassLibraryCJMKLtd
             return message;
         }
 
-        //public string Valid(DateTime orderDate, int userID, decimal price, string status)
-        //{
-        //    string message = "";
-
-        //    if (orderDate "")
-        //    {
-        //        message = "Status is too short";
-        //    }
-
-        //    if (orderDate.Length > 10)
-        //    {
-        //        message = "Name is too long";
-        //    }
-
-        //    return message;
-        //}
 
         public List<clsOrder> FilterByUserID(int Format)
         {
@@ -186,7 +170,7 @@ namespace ClassLibraryCJMKLtd
             //keep looking till all records are processed 
             while (Index < RecordCount)
             {
-                //create a blank video game page
+                //create a blank page
                 clsOrder NewOrder = new clsOrder();
                 //copy the data from the tabke to the RAM
                 NewOrder.OrderId = Convert.ToInt32(dBConnection.DataTable.Rows[Index]["OrderID"]);
@@ -216,7 +200,7 @@ namespace ClassLibraryCJMKLtd
             //keep looking till all records are processed 
             while (Index < RecordCount)
             {
-                //create a blank video game page
+                //create a blank page
                 clsOrder NewOrder = new clsOrder();
                 //copy the data from the tabke to the RAM
                 NewOrder.OrderId = Convert.ToInt32(dBConnection.DataTable.Rows[Index]["OrderID"]);

@@ -19,7 +19,7 @@ namespace FrontEnd
         {
             //upon loading the page you need to read in the cart from the session object
             MyBasket = (clsBasket)Session["MyBasket"];
-            //you also need to get the product id from the query string
+            //you also need to get the dvd id from the query string
             DVDID = Convert.ToInt32(Request.QueryString["DVDID"]);
         }
 
@@ -36,9 +36,9 @@ namespace FrontEnd
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            //create a new instance of clsCartItem
+            //create a new instance of clsBasketItem
             clsBasketItem AnItem = new clsBasketItem();
-            //set the product id
+            //set the dvd id
             AnItem.DVDID = DVDID;
             //set the quantity
             AnItem.Quantity = Convert.ToInt32(txtQuantity.Text);
@@ -46,8 +46,6 @@ namespace FrontEnd
             MyBasket.Products.Add(AnItem);
             //go back to shopping
             Response.Redirect("Index.aspx");
-        }
-
-        
+        }       
     }
 }

@@ -31,15 +31,15 @@ namespace BackEnd
 
             //variable to store the primary key
             Int32 OrderID;
-            //variable to store the video game
+            //variable to store the price
             decimal Price;
-            //variable to store the format
+            //variable to store the user id
             Int32 UserID;
-            //variable to store the age rating
+            //variable to store the order date
             DateTime OrderDate;
-            //
+            //variable to store the status
             string Status;
-            //create an instance of the video game class
+            //create an instance of the order class
             clsOrder DVD = new clsOrder();
             //
             if (format == "")
@@ -65,17 +65,17 @@ namespace BackEnd
             {
                 //get the primary key
                 OrderID = orderList[Index].OrderId;
-                //get the video game
+                //get the total price
                 Price = orderList[Index].TotalPrice;
-                //get the format
+                //get the user id
                 UserID = orderList[Index].UserID;
-                //get the format
+                //get the orderdate 
                 OrderDate = orderList[Index].OrderDate;
-                //get the format
+                //get the status
                 Status = orderList[Index].Status;
                 //create a new entry for the list box
                 KeyValuePair<int, string> listitem = new KeyValuePair<int, string>(OrderID, string.Format("{0} {1} {2} {3}", UserID, Price, OrderDate.ToShortDateString(), Status));
-                //add the video game to the list
+                //add the order to the list
                 listItems.Add(listitem);
                 
                 //move the index to the next record
@@ -98,19 +98,6 @@ namespace BackEnd
         {
             //variable to store the video game no
             Int32 OrderId;
-
-            //if (lstDVD.SelectedIndex != -1)
-            //{
-            //    //get the primary key value from the list box
-            //    OrderId = Convert.ToInt32(lstDVD.SelectedValue);
-            //    lstDVD.Items.Remove(lstDVD.SelectedItem);
-                //
-                //reRedirect("Delete.aspx?VideoGameNo=" + VideoGameNo);
-            }
-            //else
-            //{
-            //    //display an error
-            //    //lblError.Text = "you must select an item from the list to delete!";
-            //}
+        }
     }
 }

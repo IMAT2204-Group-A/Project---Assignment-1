@@ -22,10 +22,6 @@ namespace FrontEnd
             {
                 MyBasket = new clsBasket();
             }
-            //then you can display how many items are in your cart
-            //lblCartCount.Text = MyBasket.Products.Count.ToString();
-        }
-
-        
+        }     
     }
 }

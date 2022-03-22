@@ -47,5 +47,10 @@ namespace FrontEnd
                 lblError.Text = "Payment details not valid";
             }
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProductsPage.aspx");
+        }
     }
 }
