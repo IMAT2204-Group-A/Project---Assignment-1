@@ -33,13 +33,12 @@ namespace FrontEnd
         {
             clsDVD MyDVDShop = new clsDVD();
             MyDVDShop.Find(DVDID);
-            txtName.Text = MyDVDShop.DVDName;
-            txtDVDDescription.Text = MyDVDShop.DVDDescription;
-            txtDVDLenght.Text = Convert.ToString(MyDVDShop.DVDLength);
-            txtDVDReleaseDate.Text = MyDVDShop.DVDDateOfRelease.ToString("dd/mm/yyyy");
-            txtDVDPrice.Text = Convert.ToString(MyDVDShop.DVDPrice);
-            
-            DVDImage.ImageUrl = Convert.ToString(MyDVDShop.DVDImage);
+            lblDVDName.Text = MyDVDShop.DVDName;
+            lblDVDDescription.Text = MyDVDShop.DVDDescription;
+            lblDVDLenght.Text = Convert.ToString(MyDVDShop.DVDLength + " Minutes");
+            lblDVDReleaseDate.Text = MyDVDShop.DVDDateOfRelease.ToString("dd/mm/yyyy");
+            lblPrice.Text = Convert.ToString("£" + MyDVDShop.DVDPrice);
+            DVDImage.ImageUrl = Convert.ToString("/Images/" + MyDVDShop.DVDImage);
 
         }
 
@@ -49,6 +48,16 @@ namespace FrontEnd
         }
 
         protected void txtDVDDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DVDImage_Click(object sender, ImageMapEventArgs e)
+        {
+
+        }
+
+        protected void txtName_TextChanged(object sender, EventArgs e)
         {
 
         }

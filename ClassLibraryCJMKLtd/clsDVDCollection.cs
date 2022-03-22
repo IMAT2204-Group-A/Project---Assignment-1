@@ -52,6 +52,9 @@ public class clsDVDCollection
         }
     }
 
+    public List<clsDVD> DVDlist { get; set; }
+
+
     //Add method
     public Int32 Add()
     {

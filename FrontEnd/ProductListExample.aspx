@@ -127,7 +127,7 @@
     .auto-style19 {
         position: absolute;
         top: 800px;
-        left: 1817px;
+        left: 1388px;
         z-index: 1;
         width: 146px;
         height: 64px;
@@ -142,7 +142,7 @@
         <asp:Button ID="btnViewProduct" runat="server" CssClass="auto-style6" Text="View" />
         <asp:Label ID="lblDVDName1" runat="server" CssClass="auto-style3"></asp:Label>
         <asp:Label ID="lblDVDPrice1" runat="server" CssClass="auto-style9"></asp:Label>
-        <asp:Button ID="btnViewProduct1" runat="server" CssClass="auto-style11" Text="View" />
+        <asp:Button ID="btnViewProduct1" runat="server" CssClass="auto-style11" Text="View" OnClick="btnViewProduct1_Click" />
         <asp:ImageMap ID="DVDImage1" runat="server" CssClass="auto-style14">
         </asp:ImageMap>
         <asp:Label ID="lblDVDName2" runat="server" CssClass="auto-style15"></asp:Label>
@@ -155,9 +155,9 @@
         <asp:Button ID="btnViewProduct0" runat="server" CssClass="auto-style10" Text="View" />
         <asp:ImageMap ID="DVDImage0" runat="server" CssClass="auto-style7">
         </asp:ImageMap>
-        <asp:ImageMap ID="DVDImage" runat="server" CssClass="auto-style2">
+        <asp:ImageMap ID="DVDImage" runat="server" CssClass="auto-style2" OnClick="DVDImage_Click">
         </asp:ImageMap>
-        <asp:Button ID="btnNextPage" runat="server" CssClass="auto-style19" Text="Next" />
+        <asp:Button ID="btnNextPage" runat="server" CssClass="auto-style19" Text="Next" OnClick="btnNextPage_Click" />
 
     </div>
 </asp:Content>

@@ -61,9 +61,9 @@ public class clsDVD
         get { return dvdimage; }
         set { dvdimage = value; }
     }
-    public string DVDValid(string DVDName,
+    public string DVDValid(
+                             string DVDName,
                              string DVDDescription,
-                             DateTime DVDDateOfRelease,
                              int DVDLength,
                              decimal DVDPrice)
     {

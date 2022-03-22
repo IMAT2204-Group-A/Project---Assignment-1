@@ -25,7 +25,7 @@ public class clsDVDCopyCollection
 
 
     //List Creator
-    public List<clsDVDCopy> DVDCopies
+    public List<clsDVDCopy> DVDCopies 
     {
         get
         {
@@ -71,6 +71,8 @@ public class clsDVDCopyCollection
             return dbConnection.Count;
         }
     }
+
+    public List<clsDVDCopy> DVDCopiess { get; set; }
 
 
     // Methods, Add/Delete

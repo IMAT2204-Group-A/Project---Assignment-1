@@ -43,7 +43,6 @@ namespace BackEnd
             string ErrorMessage;
             ErrorMessage = ThisDVD.DVDValid(txtDVDName.Text,
                                              txtDVDDescription.Text,
-                                             Convert.ToDateTime(txtDVDDateOfRelease.Text),
                                              Convert.ToInt32(txtDVDLenght.Text),
                                              Convert.ToDecimal(txtDVDPrice.Text));
             if (ErrorMessage == "")
