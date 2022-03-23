@@ -16,5 +16,32 @@ namespace BackEnd
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            /*
+            this.Close();
+            LoginForm lgfm = new LoginForm();
+            lgfm.Show();
+            */
+        }
+
+        private void btnViewStock_Click(object sender, EventArgs e)
+        {
+            DVDListForm dvdlist = new DVDListForm();
+            dvdlist.Show();
+        }
+
+        private void btnGenre_Click(object sender, EventArgs e)
+        {
+            GenreListForm genreform = new GenreListForm();
+            genreform.Show();
+        }
+
+        private void btnDVDCopyOpen_Click(object sender, EventArgs e)
+        {
+            DVDCopyForm copyform = new DVDCopyForm();
+            copyform.Show();
+        }
     }
 }

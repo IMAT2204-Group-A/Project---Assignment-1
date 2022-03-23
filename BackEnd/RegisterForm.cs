@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BackEnd
 {
-    public partial class LoginForm : Form
+    public partial class RegisterForm : Form
     {
-        public LoginForm()
+        public RegisterForm()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
