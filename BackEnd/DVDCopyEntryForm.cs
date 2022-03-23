@@ -35,7 +35,7 @@ namespace BackEnd
             clsDVDCopyCollection DVDShop = new clsDVDCopyCollection();
             if (DVDCopyID == -1)
             {
-                DVDShop.thisDVDCopy.DVDID = Convert.ToInt32(txtDVDID);
+                DVDShop.thisDVDCopy.DVDID = Convert.ToInt32(txtDVDID.Text);
                 string condition_name = lstConditions.SelectedItem.ToString();
                 if (condition_name == Convert.ToString(clsDVDCopy.Condition.poor))
                 {
@@ -96,17 +96,15 @@ namespace BackEnd
         Int32 ShowConditions()
         {
             clsDVDCopyCollection Conditions = new clsDVDCopyCollection();
-            string Condition;
-            Int32 Index = 0;
-            while (Index < Conditions.Count)
-            {
-                Condition = Convert.ToString(Conditions.DVDCopies[Index].Condition1);
-                ListItem NewCondition = new ListItem(Condition);
-                lstConditions.Items.Add(NewCondition);
-                Index++;
 
+            Array conditions = (typeof(clsDVDCopy.Condition).GetEnumValues());
+
+            foreach (object condition in conditions)
+            {
+                lstConditions.Items.Add(condition);
             }
-            return Conditions.Count;
+
+            return conditions.Length;
              
         }
 

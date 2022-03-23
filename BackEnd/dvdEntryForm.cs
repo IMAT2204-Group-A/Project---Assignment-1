@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using ClassLibraryCJMKLtd;
 
 namespace BackEnd
 {
@@ -40,6 +41,8 @@ namespace BackEnd
         private void btnAdd_Click(object sender, EventArgs e)
         {
             clsDVD ThisDVD = new clsDVD();
+            clsDVDGenre ThisDVDGenre = new clsDVDGenre();
+            
             string ErrorMessage;
             ErrorMessage = ThisDVD.DVDValid(txtDVDName.Text,
                                              txtDVDDescription.Text,
@@ -54,38 +57,31 @@ namespace BackEnd
                     // DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID.Text);
                     DVDShop.ThisDVD.DVDName = txtDVDName.Text;
                     DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
-                    DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(txtDVDDateOfRelease.Text);
+                    DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(String.Format("dd/mm/yyyy", txtDVDDateOfRelease.Text));
                     DVDShop.ThisDVD.DVDLength = Convert.ToInt32(txtDVDLenght.Text);
                     DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
                     DVDShop.ThisDVD.SupplierID = Convert.ToInt32(txtSupplierID.Text);
                     DVDShop.ThisDVD.DVDImage = Convert.ToString(txtDVDImage.Text);
 
-                    try
-                    {
-                        clsDataConnection con = new clsDataConnection();
-                        string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
-                        if (filename == null)
-                        {
-                            MessageBox.Show("Please select a valid image.");
-                        }
-                        else
-                        {
-                            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 17)) + "FrontEnd";
-                            System.IO.File.Copy(openFileDialog1.FileName, path + "\\Images\\" + filename);
-                            DVDShop.Add();
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message,  "File Already Exists");
-                    }
+
+
+                            Int32 DVDIDADD = DVDShop.Add();
+
+                            clsDVDGenreCollection DVDGenreShop = new clsDVDGenreCollection();
+                            DVDGenreShop.ThisDVDGenre.DVDID = DVDIDADD;
+                            DVDGenreShop.ThisDVDGenre.GenreID = Convert.ToInt32(lstGenreList.SelectedValue);
+                            DVDGenreShop.Add();
+
+
+                        
+                    
                 }
                 else
                 {
                     // DVDShop.ThisDVD.DVDID = Convert.ToInt32(txtDVDID.Text);
                     DVDShop.ThisDVD.DVDName = txtDVDName.Text;
                     DVDShop.ThisDVD.DVDDescription = txtDVDDescription.Text;
-                    DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(txtDVDDateOfRelease.Text);
+                    DVDShop.ThisDVD.DVDDateOfRelease = Convert.ToDateTime(String.Format("dd/mm/yyyy", txtDVDDateOfRelease.Text);
                     DVDShop.ThisDVD.DVDLength = Convert.ToInt32(txtDVDLenght.Text);
                     DVDShop.ThisDVD.DVDDescription = Convert.ToString(txtDVDDescription);   
                     DVDShop.ThisDVD.DVDPrice = Convert.ToDecimal(txtDVDPrice.Text);
@@ -123,25 +119,29 @@ namespace BackEnd
             txtDVDLenght.Text = Convert.ToString(MyDVDShop.ThisDVD.DVDLength);
             txtDVDPrice.Text = Convert.ToString(MyDVDShop.ThisDVD.DVDPrice);
             txtSupplierID.Text = Convert.ToString(MyDVDShop.ThisDVD.SupplierID);
-            string fileName = MyDVDShop.ThisDVD.DVDImage.Split('\\')[2];
+            string fileName = MyDVDShop.ThisDVD.DVDImage;//.Split('\\')[1];
             txtDVDImage.Text = fileName;
         }
 
         Int32 ShowGenres()
         {
+            List<KeyValuePair<int, string>> ListItems = new List<KeyValuePair<int, string>>();
             clsGenreCollection Genres = new clsGenreCollection();
-            string GenreID;
+            Int32 GenreID;
             string GenreName;
             Int32 Index = 0;
+            lstGenreList.DataSource = null;
             while (Index < Genres.Count)
             {
-                GenreID = Convert.ToString(Genres.GenresList[Index].GenreID);
+                GenreID = Genres.GenresList[Index].GenreID;
                 GenreName = Genres.GenresList[Index].GenreName;
-                ListItem newGenre = new ListItem(GenreName);
-                lstGenreList.Items.Add(newGenre);
+                ListItems.Add(new KeyValuePair<int, string>(GenreID, GenreName));
                 Index++;
 
             }
+            lstGenreList.DataSource = ListItems;
+            lstGenreList.ValueMember = "Key";
+            lstGenreList.DisplayMember = "Value";
             return Genres.Count;
         }
 
@@ -161,9 +161,11 @@ namespace BackEnd
                 {
                     if (openFileDialog1.CheckFileExists)
                     {
+
                         string path = System.IO.Path.GetFileName(openFileDialog1.FileName);
                         txtDVDImage.Text = path;
-
+                        path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 17)) + "FrontEnd";
+                        System.IO.File.Copy(openFileDialog1.FileName, path + "\\Images\\" + txtDVDImage.Text);
                     }
                 }
                 else

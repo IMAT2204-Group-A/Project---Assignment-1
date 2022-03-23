@@ -24,6 +24,26 @@ namespace ClassLibraryCJMKLtd
         {
             get { return genreid; }
             set { genreid = value; }
+
+        }
+
+
+
+        public bool Find(Int32 GenreID)
+        {
+            clsDataConnection dBConnection = new clsDataConnection();
+            dBConnection.AddParameter("@DVDID", DVDID);
+            dBConnection.Execute("sproc_tblDVDGenre_FilterByDVDID");
+            if (dBConnection.Count == 1)
+            {
+                dvdid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["DVDID"]);
+                genreid = Convert.ToInt32(dBConnection.DataTable.Rows[0]["GenreID"]);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

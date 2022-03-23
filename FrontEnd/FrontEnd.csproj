@@ -76,7 +76,6 @@
     <Content Include=".config" />
     <Content Include="pageDVDList.aspx" />
     <Content Include="pageIndividualProduct.aspx" />
-    <Content Include="ProductListExample.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasketPage.aspx.cs">
@@ -114,13 +113,6 @@
     </Compile>
     <Compile Include="pageIndividualProduct.aspx.designer.cs">
       <DependentUpon>pageIndividualProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ProductListExample.aspx.cs">
-      <DependentUpon>ProductListExample.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProductListExample.aspx.designer.cs">
-      <DependentUpon>ProductListExample.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
