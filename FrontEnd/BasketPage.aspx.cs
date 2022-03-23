@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -26,6 +27,7 @@ namespace FrontEnd
 
         void DisplayBasket()
         {
+            StringBuilder sb = new StringBuilder();
             // Delete when merged
             clsBasketItem aItem = new clsBasketItem();
             aItem.DVDID = 2;
@@ -42,19 +44,19 @@ namespace FrontEnd
             decimal OrderTotal = 0m;
             Int32 Index = 0;
             Int32 Count = MyBasket.Products.Count;
-            Response.Write("<table border =\"1\">");
-            Response.Write("<tr>");
-            Response.Write("<td>");
-            Response.Write("Product Id");
-            Response.Write("</td>");
-            Response.Write("<td>");
-            Response.Write("Quantity");
-            Response.Write("</td>");
-            Response.Write("<td>");
-            Response.Write("");
-            Response.Write("</td>");
-            Response.Write("</tr>");
-            Response.Write("</tr>");
+            sb.Append("<table border =\"1\">");
+            sb.Append("<tr>");
+            sb.Append("<td>");
+            sb.Append("Product Id");
+            sb.Append("</td>");
+            sb.Append("<td>");
+            sb.Append("Quantity");
+            sb.Append("</td>");
+            sb.Append("<td>");
+            sb.Append("");
+            sb.Append("</td>");
+            sb.Append("</tr>");
+            sb.Append("</tr>");
             while (Index < Count)
             {
                 clsProducts aProduct = new clsProducts();
@@ -62,32 +64,34 @@ namespace FrontEnd
 
                 MyBasket.Products[Index].SubTotal = aProduct.Price * MyBasket.Products[Index].Quantity;
                 OrderTotal += MyBasket.Products[Index].SubTotal;
-                Response.Write("<tr>");
-                Response.Write("<td>");
-                Response.Write(MyBasket.Products[Index].DVDID);
-                Response.Write("</td>");
-                Response.Write("<td>");
-                Response.Write(MyBasket.Products[Index].Quantity);
-                Response.Write("</td>");
-                Response.Write("<td>");
-                Response.Write(MyBasket.Products[Index].SubTotal);
-                Response.Write("</td>");
-                Response.Write("<td>");
-                Response.Write("<a href=\"RemoveOrderPage.aspx?Index=" + Index + "\">Remove</a>");
-                Response.Write("</td>");
-                Response.Write("</tr>");
+                sb.Append("<tr>");
+                sb.Append("<td>");
+                sb.Append(MyBasket.Products[Index].DVDID);
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append(MyBasket.Products[Index].Quantity);
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append(MyBasket.Products[Index].SubTotal);
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<a href=\"RemoveOrderPage.aspx?Index=" + Index + "\">Remove</a>");
+                sb.Append("</td>");
+                sb.Append("</tr>");
                 Index++;
             }
             MyBasket.TotalPrice = OrderTotal;
 
-            Response.Write("<tr>");
-            Response.Write("<td colspan='4'>");
-            Response.Write(MyBasket.TotalPrice);
+            sb.Append("<tr>");
+            sb.Append("<td colspan='4'>");
+            sb.Append(MyBasket.TotalPrice);
 
-            Response.Write("<a href='CheckoutPage.aspx'>Checkout</a>");
-            Response.Write("</td>");
-            Response.Write("</tr>");
-            Response.Write("</table>");
+            sb.Append("<a href='CheckoutPage.aspx'>Checkout</a>");
+            sb.Append("</td>");
+            sb.Append("</tr>");
+            sb.Append("</table>");
+
+            LiteralBasket.Text = sb.ToString();
         }
     }
 }
